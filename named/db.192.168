@@ -1,0 +1,31 @@
+$TTL    604800
+@       IN      SOA     ringen.us. admin.ringen.us. (
+                             30         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+; name servers
+      IN      NS      ns1.ringen.us.
+
+
+; PTR Records
+253.99   IN      PTR     ns1.ringen.us.    ; 192.168.99.253
+50.99   IN      PTR     dc1-okdmaster01.ringen.us.    ; 192.168.99.50
+
+; dc1 os4 masters
+41.99   IN   PTR  os4master01.dc1-os4.ringen.us.
+42.99   IN   PTR  os4master02.dc1-os4.ringen.us.
+43.99   IN   PTR  os4master03.dc1-os4.ringen.us.
+
+; dc1 os4 workers
+45.99   IN   PTR  os4worker01.dc1-os4.ringen.us.
+46.99   IN   PTR  os4worker01.dc1-os4.ringen.us.
+
+; dc1 os4 bootstrap
+39.99   IN   PTR  bootstrap.dc1-os4.ringen.us.
+
+; dc1 os4 api loadbalancer
+40.99   IN   PTR  api.dc1-os4.ringen.us.
+40.99   IN   PTR  api-int.dc1-os4.ringen.us.
+

@@ -1,0 +1,423 @@
+2020-05-06 11:16:12,662 p=2559 u=djr |  ERROR! the playbook: playbooks.scaleup.yml could not be found
+2020-05-06 11:16:26,580 p=2564 u=djr |  PLAY [Pre-scaleup checks] ******************************************************
+2020-05-06 11:16:26,606 p=2564 u=djr |  TASK [openshift_node : Ensure [new_workers] group is populated] ****************
+2020-05-06 11:16:26,607 p=2564 u=djr |  Wednesday 06 May 2020  11:16:26 -0400 (0:00:00.152)       0:00:00.152 ********* 
+2020-05-06 11:16:26,643 p=2564 u=djr |  skipping: [localhost]
+2020-05-06 11:16:26,666 p=2564 u=djr |  TASK [openshift_node : Get cluster nodes] **************************************
+2020-05-06 11:16:26,666 p=2564 u=djr |  Wednesday 06 May 2020  11:16:26 -0400 (0:00:00.059)       0:00:00.212 ********* 
+2020-05-06 11:16:30,944 p=2564 u=djr |  changed: [localhost]
+2020-05-06 11:16:30,986 p=2564 u=djr |  TASK [openshift_node : Check for nodes which are already part of the cluster] ***
+2020-05-06 11:16:30,987 p=2564 u=djr |  Wednesday 06 May 2020  11:16:30 -0400 (0:00:04.321)       0:00:04.533 ********* 
+2020-05-06 11:16:31,081 p=2564 u=djr |  skipping: [localhost] => (item=os4worker51.dc1-os4.ringen.us) 
+2020-05-06 11:16:31,093 p=2564 u=djr |  TASK [openshift_node : Fail if new_workers group contains active nodes] ********
+2020-05-06 11:16:31,093 p=2564 u=djr |  Wednesday 06 May 2020  11:16:31 -0400 (0:00:00.105)       0:00:04.639 ********* 
+2020-05-06 11:16:31,127 p=2564 u=djr |  skipping: [localhost]
+2020-05-06 11:16:31,152 p=2564 u=djr |  PLAY [install nodes] ***********************************************************
+2020-05-06 11:16:31,174 p=2564 u=djr |  TASK [Gathering Facts] *********************************************************
+2020-05-06 11:16:31,174 p=2564 u=djr |  Wednesday 06 May 2020  11:16:31 -0400 (0:00:00.080)       0:00:04.720 ********* 
+2020-05-06 11:22:04,850 p=2564 u=djr |  [WARNING]: Unhandled error in Python interpreter discovery for host
+os4worker51.dc1-os4.ringen.us: Failed to connect to the host via ssh:
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+
+2020-05-06 11:23:22,461 p=2564 u=djr |   [ERROR]: User interrupted execution
+
+2020-05-07 13:44:42,407 p=8614 u=djr |  PLAY [Pre-scaleup checks] ************************************************************
+2020-05-07 13:44:42,430 p=8614 u=djr |  TASK [openshift_node : Ensure [new_workers] group is populated] **********************
+2020-05-07 13:44:42,430 p=8614 u=djr |  Thursday 07 May 2020  13:44:42 -0400 (0:00:00.140)       0:00:00.140 ********** 
+2020-05-07 13:44:42,466 p=8614 u=djr |  skipping: [localhost]
+2020-05-07 13:44:42,479 p=8614 u=djr |  TASK [openshift_node : Get cluster nodes] ********************************************
+2020-05-07 13:44:42,479 p=8614 u=djr |  Thursday 07 May 2020  13:44:42 -0400 (0:00:00.048)       0:00:00.189 ********** 
+2020-05-07 13:44:47,262 p=8614 u=djr |  changed: [localhost]
+2020-05-07 13:44:47,317 p=8614 u=djr |  TASK [openshift_node : Check for nodes which are already part of the cluster] ********
+2020-05-07 13:44:47,318 p=8614 u=djr |  Thursday 07 May 2020  13:44:47 -0400 (0:00:04.838)       0:00:05.028 ********** 
+2020-05-07 13:44:47,422 p=8614 u=djr |  skipping: [localhost] => (item=os4worker51.dc1-os4.ringen.us) 
+2020-05-07 13:44:47,434 p=8614 u=djr |  TASK [openshift_node : Fail if new_workers group contains active nodes] **************
+2020-05-07 13:44:47,434 p=8614 u=djr |  Thursday 07 May 2020  13:44:47 -0400 (0:00:00.115)       0:00:05.144 ********** 
+2020-05-07 13:44:47,466 p=8614 u=djr |  skipping: [localhost]
+2020-05-07 13:44:47,492 p=8614 u=djr |  PLAY [install nodes] *****************************************************************
+2020-05-07 13:44:47,511 p=8614 u=djr |  TASK [Gathering Facts] ***************************************************************
+2020-05-07 13:44:47,511 p=8614 u=djr |  Thursday 07 May 2020  13:44:47 -0400 (0:00:00.076)       0:00:05.221 ********** 
+2020-05-07 13:44:50,626 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:44:50,685 p=8614 u=djr |  TASK [openshift_node : include_tasks] ************************************************
+2020-05-07 13:44:50,685 p=8614 u=djr |  Thursday 07 May 2020  13:44:50 -0400 (0:00:03.174)       0:00:08.395 ********** 
+2020-05-07 13:44:50,781 p=8614 u=djr |  included: /usr/share/ansible/openshift-ansible/roles/openshift_node/tasks/install.yml for os4worker51.dc1-os4.ringen.us
+2020-05-07 13:44:50,854 p=8614 u=djr |  TASK [openshift_node : Install openshift support packages] ***************************
+2020-05-07 13:44:50,855 p=8614 u=djr |  Thursday 07 May 2020  13:44:50 -0400 (0:00:00.169)       0:00:08.565 ********** 
+2020-05-07 13:50:59,101 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:50:59,148 p=8614 u=djr |  TASK [openshift_node : Create CNI dirs for crio] *************************************
+2020-05-07 13:50:59,148 p=8614 u=djr |  Thursday 07 May 2020  13:50:59 -0400 (0:06:08.293)       0:06:16.859 ********** 
+2020-05-07 13:51:00,137 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us] => (item=/var/lib/cni/bin)
+2020-05-07 13:51:00,461 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us] => (item=/etc/kubernetes/cni/net.d/)
+2020-05-07 13:51:00,798 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us] => (item=/opt/cni/bin/)
+2020-05-07 13:51:00,902 p=8614 u=djr |  TASK [openshift_node : Get cluster version] ******************************************
+2020-05-07 13:51:00,902 p=8614 u=djr |  Thursday 07 May 2020  13:51:00 -0400 (0:00:01.754)       0:06:18.613 ********** 
+2020-05-07 13:51:04,174 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:51:04,267 p=8614 u=djr |  TASK [openshift_node : Set fact l_cluster_version] ***********************************
+2020-05-07 13:51:04,268 p=8614 u=djr |  Thursday 07 May 2020  13:51:04 -0400 (0:00:03.365)       0:06:21.978 ********** 
+2020-05-07 13:51:04,334 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:51:04,417 p=8614 u=djr |  TASK [openshift_node : Override version when running CI] *****************************
+2020-05-07 13:51:04,417 p=8614 u=djr |  Thursday 07 May 2020  13:51:04 -0400 (0:00:00.149)       0:06:22.128 ********** 
+2020-05-07 13:51:04,464 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:51:04,544 p=8614 u=djr |  TASK [openshift_node : Install openshift packages] ***********************************
+2020-05-07 13:51:04,545 p=8614 u=djr |  Thursday 07 May 2020  13:51:04 -0400 (0:00:00.127)       0:06:22.255 ********** 
+2020-05-07 13:52:07,209 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:07,278 p=8614 u=djr |  TASK [openshift_node : Enable the CRI-O service] *************************************
+2020-05-07 13:52:07,279 p=8614 u=djr |  Thursday 07 May 2020  13:52:07 -0400 (0:01:02.733)       0:07:24.989 ********** 
+2020-05-07 13:52:09,326 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:09,395 p=8614 u=djr |  TASK [openshift_node : include_tasks] ************************************************
+2020-05-07 13:52:09,396 p=8614 u=djr |  Thursday 07 May 2020  13:52:09 -0400 (0:00:02.116)       0:07:27.106 ********** 
+2020-05-07 13:52:09,651 p=8614 u=djr |  included: /usr/share/ansible/openshift-ansible/roles/openshift_node/tasks/config.yml for os4worker51.dc1-os4.ringen.us
+2020-05-07 13:52:09,763 p=8614 u=djr |  TASK [openshift_node : Disable swap] *************************************************
+2020-05-07 13:52:09,764 p=8614 u=djr |  Thursday 07 May 2020  13:52:09 -0400 (0:00:00.368)       0:07:27.474 ********** 
+2020-05-07 13:52:10,723 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:10,787 p=8614 u=djr |  TASK [openshift_node : Enable IP Forwarding] *****************************************
+2020-05-07 13:52:10,787 p=8614 u=djr |  Thursday 07 May 2020  13:52:10 -0400 (0:00:01.023)       0:07:28.498 ********** 
+2020-05-07 13:52:11,729 p=8614 u=djr |  [WARNING]: The value 1 (type int) in a string field was converted to u'1' (type
+string). If this does not look like what you expect, quote the entire value to ensure
+it does not change.
+
+2020-05-07 13:52:11,730 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:11,782 p=8614 u=djr |  TASK [openshift_node : Disable firewalld service] ************************************
+2020-05-07 13:52:11,783 p=8614 u=djr |  Thursday 07 May 2020  13:52:11 -0400 (0:00:00.995)       0:07:29.493 ********** 
+2020-05-07 13:52:12,379 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:12,446 p=8614 u=djr |  TASK [openshift_node : Setting sebool container_manage_cgroup] ***********************
+2020-05-07 13:52:12,446 p=8614 u=djr |  Thursday 07 May 2020  13:52:12 -0400 (0:00:00.663)       0:07:30.157 ********** 
+2020-05-07 13:52:14,101 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:14,158 p=8614 u=djr |  TASK [openshift_node : Create temp directory] ****************************************
+2020-05-07 13:52:14,159 p=8614 u=djr |  Thursday 07 May 2020  13:52:14 -0400 (0:00:01.712)       0:07:31.869 ********** 
+2020-05-07 13:52:15,015 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:15,084 p=8614 u=djr |  TASK [openshift_node : Wait for bootstrap endpoint to show up] ***********************
+2020-05-07 13:52:15,085 p=8614 u=djr |  Thursday 07 May 2020  13:52:15 -0400 (0:00:00.925)       0:07:32.795 ********** 
+2020-05-07 13:52:17,567 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:17,624 p=8614 u=djr |  TASK [openshift_node : Fetch bootstrap ignition file locally] ************************
+2020-05-07 13:52:17,624 p=8614 u=djr |  Thursday 07 May 2020  13:52:17 -0400 (0:00:02.539)       0:07:35.334 ********** 
+2020-05-07 13:52:19,092 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:19,147 p=8614 u=djr |  TASK [openshift_node : Extract the last registries.conf file from bootstrap.ign] *****
+2020-05-07 13:52:19,147 p=8614 u=djr |  Thursday 07 May 2020  13:52:19 -0400 (0:00:01.523)       0:07:36.858 ********** 
+2020-05-07 13:52:19,181 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:19,225 p=8614 u=djr |  TASK [openshift_node : Check data URL encoding and extract source data] **************
+2020-05-07 13:52:19,226 p=8614 u=djr |  Thursday 07 May 2020  13:52:19 -0400 (0:00:00.078)       0:07:36.936 ********** 
+2020-05-07 13:52:19,257 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:19,303 p=8614 u=djr |  TASK [openshift_node : Write /etc/containers/registries.conf] ************************
+2020-05-07 13:52:19,303 p=8614 u=djr |  Thursday 07 May 2020  13:52:19 -0400 (0:00:00.077)       0:07:37.014 ********** 
+2020-05-07 13:52:21,771 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:21,832 p=8614 u=djr |  TASK [openshift_node : Restart the CRI-O service] ************************************
+2020-05-07 13:52:21,832 p=8614 u=djr |  Thursday 07 May 2020  13:52:21 -0400 (0:00:02.528)       0:07:39.542 ********** 
+2020-05-07 13:52:22,903 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:22,961 p=8614 u=djr |  TASK [openshift_node : Get cluster pull-secret] **************************************
+2020-05-07 13:52:22,961 p=8614 u=djr |  Thursday 07 May 2020  13:52:22 -0400 (0:00:01.128)       0:07:40.671 ********** 
+2020-05-07 13:52:24,233 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:52:24,306 p=8614 u=djr |  TASK [openshift_node : Write pull-secret to file] ************************************
+2020-05-07 13:52:24,307 p=8614 u=djr |  Thursday 07 May 2020  13:52:24 -0400 (0:00:01.345)       0:07:42.017 ********** 
+2020-05-07 13:52:26,231 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:26,315 p=8614 u=djr |  TASK [openshift_node : Get cluster release image] ************************************
+2020-05-07 13:52:26,316 p=8614 u=djr |  Thursday 07 May 2020  13:52:26 -0400 (0:00:02.009)       0:07:44.026 ********** 
+2020-05-07 13:52:27,987 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:52:28,050 p=8614 u=djr |  TASK [openshift_node : Set l_release_image fact] *************************************
+2020-05-07 13:52:28,051 p=8614 u=djr |  Thursday 07 May 2020  13:52:28 -0400 (0:00:01.735)       0:07:45.761 ********** 
+2020-05-07 13:52:28,107 p=8614 u=djr |  ok: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:28,204 p=8614 u=djr |  TASK [openshift_node : Check for cluster http proxy] *********************************
+2020-05-07 13:52:28,205 p=8614 u=djr |  Thursday 07 May 2020  13:52:28 -0400 (0:00:00.154)       0:07:45.915 ********** 
+2020-05-07 13:52:30,438 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:52:30,513 p=8614 u=djr |  TASK [openshift_node : Set http proxy] ***********************************************
+2020-05-07 13:52:30,513 p=8614 u=djr |  Thursday 07 May 2020  13:52:30 -0400 (0:00:02.307)       0:07:48.223 ********** 
+2020-05-07 13:52:30,546 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:30,624 p=8614 u=djr |  TASK [openshift_node : Check for cluster https proxy] ********************************
+2020-05-07 13:52:30,624 p=8614 u=djr |  Thursday 07 May 2020  13:52:30 -0400 (0:00:00.110)       0:07:48.334 ********** 
+2020-05-07 13:52:32,556 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:52:32,622 p=8614 u=djr |  TASK [openshift_node : Set https proxy] **********************************************
+2020-05-07 13:52:32,622 p=8614 u=djr |  Thursday 07 May 2020  13:52:32 -0400 (0:00:01.998)       0:07:50.332 ********** 
+2020-05-07 13:52:32,652 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:32,713 p=8614 u=djr |  TASK [openshift_node : Check for cluster no proxy] ***********************************
+2020-05-07 13:52:32,713 p=8614 u=djr |  Thursday 07 May 2020  13:52:32 -0400 (0:00:00.090)       0:07:50.423 ********** 
+2020-05-07 13:52:34,374 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:52:34,425 p=8614 u=djr |  TASK [openshift_node : Set no proxy] *************************************************
+2020-05-07 13:52:34,426 p=8614 u=djr |  Thursday 07 May 2020  13:52:34 -0400 (0:00:01.712)       0:07:52.136 ********** 
+2020-05-07 13:52:34,456 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:34,520 p=8614 u=djr |  TASK [openshift_node : Check for additional trust bundle] ****************************
+2020-05-07 13:52:34,520 p=8614 u=djr |  Thursday 07 May 2020  13:52:34 -0400 (0:00:00.094)       0:07:52.231 ********** 
+2020-05-07 13:52:35,705 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us -> localhost]
+2020-05-07 13:52:35,767 p=8614 u=djr |  TASK [openshift_node : Set additional trust bundle] **********************************
+2020-05-07 13:52:35,768 p=8614 u=djr |  Thursday 07 May 2020  13:52:35 -0400 (0:00:01.247)       0:07:53.479 ********** 
+2020-05-07 13:52:35,800 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:35,864 p=8614 u=djr |  TASK [openshift_node : Copy additional trust bundle to system CA trust] **************
+2020-05-07 13:52:35,865 p=8614 u=djr |  Thursday 07 May 2020  13:52:35 -0400 (0:00:00.096)       0:07:53.575 ********** 
+2020-05-07 13:52:35,893 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:35,945 p=8614 u=djr |  TASK [openshift_node : Update CA trust] **********************************************
+2020-05-07 13:52:35,946 p=8614 u=djr |  Thursday 07 May 2020  13:52:35 -0400 (0:00:00.080)       0:07:53.656 ********** 
+2020-05-07 13:52:35,975 p=8614 u=djr |  skipping: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:36,027 p=8614 u=djr |  TASK [openshift_node : Pull release image] *******************************************
+2020-05-07 13:52:36,028 p=8614 u=djr |  Thursday 07 May 2020  13:52:36 -0400 (0:00:00.081)       0:07:53.738 ********** 
+2020-05-07 13:52:52,435 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:52,493 p=8614 u=djr |  TASK [openshift_node : Get machine controller daemon image from release image] *******
+2020-05-07 13:52:52,494 p=8614 u=djr |  Thursday 07 May 2020  13:52:52 -0400 (0:00:16.465)       0:08:10.204 ********** 
+2020-05-07 13:52:54,302 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:52:54,379 p=8614 u=djr |  TASK [openshift_node : Pull MCD image] ***********************************************
+2020-05-07 13:52:54,380 p=8614 u=djr |  Thursday 07 May 2020  13:52:54 -0400 (0:00:01.886)       0:08:12.090 ********** 
+2020-05-07 13:53:03,842 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:53:03,897 p=8614 u=djr |  TASK [openshift_node : Apply ignition manifest] **************************************
+2020-05-07 13:53:03,897 p=8614 u=djr |  Thursday 07 May 2020  13:53:03 -0400 (0:00:09.516)       0:08:21.607 ********** 
+2020-05-07 13:53:05,567 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:53:05,628 p=8614 u=djr |  TASK [openshift_node : Remove temp directory] ****************************************
+2020-05-07 13:53:05,628 p=8614 u=djr |  Thursday 07 May 2020  13:53:05 -0400 (0:00:01.731)       0:08:23.338 ********** 
+2020-05-07 13:53:06,099 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 13:53:06,173 p=8614 u=djr |  TASK [openshift_node : Reboot the host and wait for it to come back] *****************
+2020-05-07 13:53:06,173 p=8614 u=djr |  Thursday 07 May 2020  13:53:06 -0400 (0:00:00.544)       0:08:23.883 ********** 
+2020-05-07 15:53:27,334 p=8614 u=djr |  changed: [os4worker51.dc1-os4.ringen.us]
+2020-05-07 15:53:27,439 p=8614 u=djr |  TASK [openshift_node : Approve node-bootstrapper CSR] ********************************
+2020-05-07 15:53:27,439 p=8614 u=djr |  Thursday 07 May 2020  15:53:27 -0400 (2:00:21.265)       2:08:45.149 ********** 
+2020-05-07 15:53:30,113 p=8614 u=djr |  FAILED - RETRYING: Approve node-bootstrapper CSR (6 retries left).
+2020-05-07 15:53:37,949 p=8614 u=djr |  FAILED - RETRYING: Approve node-bootstrapper CSR (5 retries left).
+2020-05-07 15:53:44,783 p=8614 u=djr |  FAILED - RETRYING: Approve node-bootstrapper CSR (4 retries left).
+2020-05-07 15:53:52,198 p=8614 u=djr |  FAILED - RETRYING: Approve node-bootstrapper CSR (3 retries left).
+2020-05-07 15:53:59,238 p=8614 u=djr |  FAILED - RETRYING: Approve node-bootstrapper CSR (2 retries left).
+2020-05-07 15:54:06,208 p=8614 u=djr |  FAILED - RETRYING: Approve node-bootstrapper CSR (1 retries left).
+2020-05-07 15:54:12,747 p=8614 u=djr |  failed: [os4worker51.dc1-os4.ringen.us -> localhost] (item=os4worker51.dc1-os4.ringen.us) => {"ansible_loop_var": "item", "attempts": 6, "changed": true, "cmd": "count=0; for csr in `oc --config=/home/djr/os4-install/auth/kubeconfig get csr --no-headers  | grep \" system:serviceaccount:openshift-machine-config-operator:node-bootstrapper \"  | cut -d \" \" -f1`;\ndo\n  oc --config=/home/djr/os4-install/auth/kubeconfig describe csr/$csr    | grep \" system:node:os4worker51.bluemix.net$\";\n  if [ $? -eq 0 ];\n  then\n    oc --config=/home/djr/os4-install/auth/kubeconfig adm certificate approve ${csr};\n    if [ $? -eq 0 ];\n    then\n      count=$((count+1));\n    fi;\n  fi;\ndone; exit $((!count));\n", "delta": "0:00:01.134624", "end": "2020-05-07 15:54:12.651344", "item": "os4worker51.dc1-os4.ringen.us", "msg": "non-zero return code", "rc": 1, "start": "2020-05-07 15:54:11.516720", "stderr": "No resources found in default namespace.", "stderr_lines": ["No resources found in default namespace."], "stdout": "", "stdout_lines": []}
+2020-05-07 15:54:12,783 p=8614 u=djr |  NO MORE HOSTS LEFT *******************************************************************
+2020-05-07 15:54:12,797 p=8614 u=djr |  PLAY RECAP ***************************************************************************
+2020-05-07 15:54:12,799 p=8614 u=djr |  localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2020-05-07 15:54:12,800 p=8614 u=djr |  os4worker51.dc1-os4.ringen.us : ok=34   changed=24   unreachable=0    failed=1    skipped=7    rescued=0    ignored=0   
+2020-05-07 15:54:12,803 p=8614 u=djr |  Thursday 07 May 2020  15:54:12 -0400 (0:00:45.363)       2:09:30.512 ********** 
+2020-05-07 15:54:12,803 p=8614 u=djr |  =============================================================================== 
+2020-05-07 15:54:12,815 p=8614 u=djr |  openshift_node : Reboot the host and wait for it to come back -------------- 7221.27s
+2020-05-07 15:54:12,816 p=8614 u=djr |  openshift_node : Install openshift support packages ------------------------- 368.29s
+2020-05-07 15:54:12,816 p=8614 u=djr |  openshift_node : Install openshift packages ---------------------------------- 62.73s
+2020-05-07 15:54:12,816 p=8614 u=djr |  openshift_node : Approve node-bootstrapper CSR ------------------------------- 45.36s
+2020-05-07 15:54:12,816 p=8614 u=djr |  openshift_node : Pull release image ------------------------------------------ 16.47s
+2020-05-07 15:54:12,817 p=8614 u=djr |  openshift_node : Pull MCD image ----------------------------------------------- 9.52s
+2020-05-07 15:54:12,818 p=8614 u=djr |  openshift_node : Get cluster nodes -------------------------------------------- 4.84s
+2020-05-07 15:54:12,818 p=8614 u=djr |  openshift_node : Get cluster version ------------------------------------------ 3.37s
+2020-05-07 15:54:12,818 p=8614 u=djr |  Gathering Facts --------------------------------------------------------------- 3.17s
+2020-05-07 15:54:12,818 p=8614 u=djr |  openshift_node : Wait for bootstrap endpoint to show up ----------------------- 2.54s
+2020-05-07 15:54:12,819 p=8614 u=djr |  openshift_node : Write /etc/containers/registries.conf ------------------------ 2.53s
+2020-05-07 15:54:12,819 p=8614 u=djr |  openshift_node : Check for cluster http proxy --------------------------------- 2.31s
+2020-05-07 15:54:12,819 p=8614 u=djr |  openshift_node : Enable the CRI-O service ------------------------------------- 2.12s
+2020-05-07 15:54:12,821 p=8614 u=djr |  openshift_node : Write pull-secret to file ------------------------------------ 2.01s
+2020-05-07 15:54:12,821 p=8614 u=djr |  openshift_node : Check for cluster https proxy -------------------------------- 2.00s
+2020-05-07 15:54:12,821 p=8614 u=djr |  openshift_node : Get machine controller daemon image from release image ------- 1.89s
+2020-05-07 15:54:12,822 p=8614 u=djr |  openshift_node : Create CNI dirs for crio ------------------------------------- 1.75s
+2020-05-07 15:54:12,822 p=8614 u=djr |  openshift_node : Get cluster release image ------------------------------------ 1.73s
+2020-05-07 15:54:12,822 p=8614 u=djr |  openshift_node : Apply ignition manifest -------------------------------------- 1.73s
+2020-05-07 15:54:12,822 p=8614 u=djr |  openshift_node : Check for cluster no proxy ----------------------------------- 1.71s
+2020-05-07 17:50:45,696 p=9399 u=djr |  PLAY [Pre-scaleup checks] ************************************************************
+2020-05-07 17:50:45,722 p=9399 u=djr |  TASK [openshift_node : Ensure [new_workers] group is populated] **********************
+2020-05-07 17:50:45,722 p=9399 u=djr |  Thursday 07 May 2020  17:50:45 -0400 (0:00:00.162)       0:00:00.162 ********** 
+2020-05-07 17:50:45,762 p=9399 u=djr |  skipping: [localhost]
+2020-05-07 17:50:45,779 p=9399 u=djr |  TASK [openshift_node : Get cluster nodes] ********************************************
+2020-05-07 17:50:45,779 p=9399 u=djr |  Thursday 07 May 2020  17:50:45 -0400 (0:00:00.057)       0:00:00.219 ********** 
+2020-05-07 17:50:49,874 p=9399 u=djr |  changed: [localhost]
+2020-05-07 17:50:49,893 p=9399 u=djr |  TASK [openshift_node : Check for nodes which are already part of the cluster] ********
+2020-05-07 17:50:49,894 p=9399 u=djr |  Thursday 07 May 2020  17:50:49 -0400 (0:00:04.114)       0:00:04.334 ********** 
+2020-05-07 17:50:49,969 p=9399 u=djr |  skipping: [localhost] => (item=ibmworker52.dc1-os4.ringen.us) 
+2020-05-07 17:50:49,987 p=9399 u=djr |  TASK [openshift_node : Fail if new_workers group contains active nodes] **************
+2020-05-07 17:50:49,987 p=9399 u=djr |  Thursday 07 May 2020  17:50:49 -0400 (0:00:00.093)       0:00:04.427 ********** 
+2020-05-07 17:50:50,030 p=9399 u=djr |  skipping: [localhost]
+2020-05-07 17:50:50,054 p=9399 u=djr |  PLAY [install nodes] *****************************************************************
+2020-05-07 17:50:50,075 p=9399 u=djr |  TASK [Gathering Facts] ***************************************************************
+2020-05-07 17:50:50,076 p=9399 u=djr |  Thursday 07 May 2020  17:50:50 -0400 (0:00:00.088)       0:00:04.516 ********** 
+2020-05-07 17:50:53,964 p=9399 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 17:50:54,036 p=9399 u=djr |  TASK [openshift_node : include_tasks] ************************************************
+2020-05-07 17:50:54,036 p=9399 u=djr |  Thursday 07 May 2020  17:50:54 -0400 (0:00:03.960)       0:00:08.477 ********** 
+2020-05-07 17:50:54,136 p=9399 u=djr |  included: /usr/share/ansible/openshift-ansible/roles/openshift_node/tasks/install.yml for ibmworker52.dc1-os4.ringen.us
+2020-05-07 17:50:54,218 p=9399 u=djr |  TASK [openshift_node : Install openshift support packages] ***************************
+2020-05-07 17:50:54,218 p=9399 u=djr |  Thursday 07 May 2020  17:50:54 -0400 (0:00:00.181)       0:00:08.658 ********** 
+2020-05-07 17:51:58,632 p=9399 u=djr |  FAILED - RETRYING: Install openshift support packages (3 retries left).
+2020-05-07 17:52:35,715 p=9399 u=djr |  FAILED - RETRYING: Install openshift support packages (2 retries left).
+2020-05-07 17:53:12,892 p=9399 u=djr |  FAILED - RETRYING: Install openshift support packages (1 retries left).
+2020-05-07 17:53:49,927 p=9399 u=djr |  fatal: [ibmworker52.dc1-os4.ringen.us]: FAILED! => {"ansible_job_id": "344751088240.3324", "attempts": 3, "changed": false, "finished": 1, "msg": "No package matching 'podman' found available, installed or updated", "rc": 126, "results": ["No package matching 'podman' found available, installed or updated"]}
+2020-05-07 17:53:49,931 p=9399 u=djr |  PLAY RECAP ***************************************************************************
+2020-05-07 17:53:49,932 p=9399 u=djr |  ibmworker52.dc1-os4.ringen.us : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-05-07 17:53:49,932 p=9399 u=djr |  localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2020-05-07 17:53:49,932 p=9399 u=djr |  Thursday 07 May 2020  17:53:49 -0400 (0:02:55.714)       0:03:04.372 ********** 
+2020-05-07 17:53:49,932 p=9399 u=djr |  =============================================================================== 
+2020-05-07 17:53:49,933 p=9399 u=djr |  openshift_node : Install openshift support packages ------------------------- 175.71s
+2020-05-07 17:53:49,933 p=9399 u=djr |  openshift_node : Get cluster nodes -------------------------------------------- 4.11s
+2020-05-07 17:53:49,933 p=9399 u=djr |  Gathering Facts --------------------------------------------------------------- 3.96s
+2020-05-07 17:53:49,933 p=9399 u=djr |  openshift_node : include_tasks ------------------------------------------------ 0.18s
+2020-05-07 17:53:49,933 p=9399 u=djr |  openshift_node : Check for nodes which are already part of the cluster -------- 0.09s
+2020-05-07 17:53:49,933 p=9399 u=djr |  openshift_node : Fail if new_workers group contains active nodes -------------- 0.09s
+2020-05-07 17:53:49,933 p=9399 u=djr |  openshift_node : Ensure [new_workers] group is populated ---------------------- 0.06s
+2020-05-07 18:05:13,630 p=9532 u=djr |  PLAY [Pre-scaleup checks] ************************************************************
+2020-05-07 18:05:13,662 p=9532 u=djr |  TASK [openshift_node : Ensure [new_workers] group is populated] **********************
+2020-05-07 18:05:13,662 p=9532 u=djr |  Thursday 07 May 2020  18:05:13 -0400 (0:00:00.240)       0:00:00.240 ********** 
+2020-05-07 18:05:13,701 p=9532 u=djr |  skipping: [localhost]
+2020-05-07 18:05:13,715 p=9532 u=djr |  TASK [openshift_node : Get cluster nodes] ********************************************
+2020-05-07 18:05:13,716 p=9532 u=djr |  Thursday 07 May 2020  18:05:13 -0400 (0:00:00.053)       0:00:00.294 ********** 
+2020-05-07 18:05:18,173 p=9532 u=djr |  changed: [localhost]
+2020-05-07 18:05:18,197 p=9532 u=djr |  TASK [openshift_node : Check for nodes which are already part of the cluster] ********
+2020-05-07 18:05:18,198 p=9532 u=djr |  Thursday 07 May 2020  18:05:18 -0400 (0:00:04.482)       0:00:04.776 ********** 
+2020-05-07 18:05:18,297 p=9532 u=djr |  skipping: [localhost] => (item=ibmworker52.dc1-os4.ringen.us) 
+2020-05-07 18:05:18,309 p=9532 u=djr |  TASK [openshift_node : Fail if new_workers group contains active nodes] **************
+2020-05-07 18:05:18,310 p=9532 u=djr |  Thursday 07 May 2020  18:05:18 -0400 (0:00:00.111)       0:00:04.887 ********** 
+2020-05-07 18:05:18,344 p=9532 u=djr |  skipping: [localhost]
+2020-05-07 18:05:18,368 p=9532 u=djr |  PLAY [install nodes] *****************************************************************
+2020-05-07 18:05:18,387 p=9532 u=djr |  TASK [Gathering Facts] ***************************************************************
+2020-05-07 18:05:18,387 p=9532 u=djr |  Thursday 07 May 2020  18:05:18 -0400 (0:00:00.077)       0:00:04.965 ********** 
+2020-05-07 18:05:21,663 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:05:21,750 p=9532 u=djr |  TASK [openshift_node : include_tasks] ************************************************
+2020-05-07 18:05:21,750 p=9532 u=djr |  Thursday 07 May 2020  18:05:21 -0400 (0:00:03.363)       0:00:08.328 ********** 
+2020-05-07 18:05:21,849 p=9532 u=djr |  included: /usr/share/ansible/openshift-ansible/roles/openshift_node/tasks/install.yml for ibmworker52.dc1-os4.ringen.us
+2020-05-07 18:05:21,948 p=9532 u=djr |  TASK [openshift_node : Install openshift support packages] ***************************
+2020-05-07 18:05:21,948 p=9532 u=djr |  Thursday 07 May 2020  18:05:21 -0400 (0:00:00.198)       0:00:08.526 ********** 
+2020-05-07 18:10:30,215 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:10:30,269 p=9532 u=djr |  TASK [openshift_node : Create CNI dirs for crio] *************************************
+2020-05-07 18:10:30,269 p=9532 u=djr |  Thursday 07 May 2020  18:10:30 -0400 (0:05:08.320)       0:05:16.847 ********** 
+2020-05-07 18:10:31,276 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us] => (item=/var/lib/cni/bin)
+2020-05-07 18:10:31,676 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us] => (item=/etc/kubernetes/cni/net.d/)
+2020-05-07 18:10:32,076 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us] => (item=/opt/cni/bin/)
+2020-05-07 18:10:32,170 p=9532 u=djr |  TASK [openshift_node : Get cluster version] ******************************************
+2020-05-07 18:10:32,171 p=9532 u=djr |  Thursday 07 May 2020  18:10:32 -0400 (0:00:01.901)       0:05:18.748 ********** 
+2020-05-07 18:10:33,895 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:10:33,961 p=9532 u=djr |  TASK [openshift_node : Set fact l_cluster_version] ***********************************
+2020-05-07 18:10:33,961 p=9532 u=djr |  Thursday 07 May 2020  18:10:33 -0400 (0:00:01.790)       0:05:20.539 ********** 
+2020-05-07 18:10:33,996 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:10:34,068 p=9532 u=djr |  TASK [openshift_node : Override version when running CI] *****************************
+2020-05-07 18:10:34,069 p=9532 u=djr |  Thursday 07 May 2020  18:10:34 -0400 (0:00:00.107)       0:05:20.647 ********** 
+2020-05-07 18:10:34,106 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:10:34,176 p=9532 u=djr |  TASK [openshift_node : Install openshift packages] ***********************************
+2020-05-07 18:10:34,176 p=9532 u=djr |  Thursday 07 May 2020  18:10:34 -0400 (0:00:00.107)       0:05:20.754 ********** 
+2020-05-07 18:11:36,908 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:36,982 p=9532 u=djr |  TASK [openshift_node : Enable the CRI-O service] *************************************
+2020-05-07 18:11:36,982 p=9532 u=djr |  Thursday 07 May 2020  18:11:36 -0400 (0:01:02.805)       0:06:23.560 ********** 
+2020-05-07 18:11:39,571 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:39,647 p=9532 u=djr |  TASK [openshift_node : include_tasks] ************************************************
+2020-05-07 18:11:39,647 p=9532 u=djr |  Thursday 07 May 2020  18:11:39 -0400 (0:00:02.664)       0:06:26.225 ********** 
+2020-05-07 18:11:39,921 p=9532 u=djr |  included: /usr/share/ansible/openshift-ansible/roles/openshift_node/tasks/config.yml for ibmworker52.dc1-os4.ringen.us
+2020-05-07 18:11:40,106 p=9532 u=djr |  TASK [openshift_node : Disable swap] *************************************************
+2020-05-07 18:11:40,107 p=9532 u=djr |  Thursday 07 May 2020  18:11:40 -0400 (0:00:00.459)       0:06:26.685 ********** 
+2020-05-07 18:11:41,452 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:41,566 p=9532 u=djr |  TASK [openshift_node : Enable IP Forwarding] *****************************************
+2020-05-07 18:11:41,567 p=9532 u=djr |  Thursday 07 May 2020  18:11:41 -0400 (0:00:01.459)       0:06:28.145 ********** 
+2020-05-07 18:11:42,853 p=9532 u=djr |  [WARNING]: The value 1 (type int) in a string field was converted to u'1' (type
+string). If this does not look like what you expect, quote the entire value to ensure
+it does not change.
+
+2020-05-07 18:11:42,854 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:42,977 p=9532 u=djr |  TASK [openshift_node : Disable firewalld service] ************************************
+2020-05-07 18:11:42,978 p=9532 u=djr |  Thursday 07 May 2020  18:11:42 -0400 (0:00:01.410)       0:06:29.556 ********** 
+2020-05-07 18:11:43,679 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:43,745 p=9532 u=djr |  TASK [openshift_node : Setting sebool container_manage_cgroup] ***********************
+2020-05-07 18:11:43,745 p=9532 u=djr |  Thursday 07 May 2020  18:11:43 -0400 (0:00:00.767)       0:06:30.323 ********** 
+2020-05-07 18:11:45,259 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:45,309 p=9532 u=djr |  TASK [openshift_node : Create temp directory] ****************************************
+2020-05-07 18:11:45,309 p=9532 u=djr |  Thursday 07 May 2020  18:11:45 -0400 (0:00:01.564)       0:06:31.887 ********** 
+2020-05-07 18:11:46,214 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:46,266 p=9532 u=djr |  TASK [openshift_node : Wait for bootstrap endpoint to show up] ***********************
+2020-05-07 18:11:46,266 p=9532 u=djr |  Thursday 07 May 2020  18:11:46 -0400 (0:00:00.956)       0:06:32.844 ********** 
+2020-05-07 18:11:48,514 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:48,584 p=9532 u=djr |  TASK [openshift_node : Fetch bootstrap ignition file locally] ************************
+2020-05-07 18:11:48,584 p=9532 u=djr |  Thursday 07 May 2020  18:11:48 -0400 (0:00:02.317)       0:06:35.162 ********** 
+2020-05-07 18:11:50,161 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:50,242 p=9532 u=djr |  TASK [openshift_node : Extract the last registries.conf file from bootstrap.ign] *****
+2020-05-07 18:11:50,242 p=9532 u=djr |  Thursday 07 May 2020  18:11:50 -0400 (0:00:01.658)       0:06:36.820 ********** 
+2020-05-07 18:11:50,296 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:50,365 p=9532 u=djr |  TASK [openshift_node : Check data URL encoding and extract source data] **************
+2020-05-07 18:11:50,365 p=9532 u=djr |  Thursday 07 May 2020  18:11:50 -0400 (0:00:00.122)       0:06:36.943 ********** 
+2020-05-07 18:11:50,413 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:50,497 p=9532 u=djr |  TASK [openshift_node : Write /etc/containers/registries.conf] ************************
+2020-05-07 18:11:50,498 p=9532 u=djr |  Thursday 07 May 2020  18:11:50 -0400 (0:00:00.132)       0:06:37.075 ********** 
+2020-05-07 18:11:53,549 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:53,607 p=9532 u=djr |  TASK [openshift_node : Restart the CRI-O service] ************************************
+2020-05-07 18:11:53,607 p=9532 u=djr |  Thursday 07 May 2020  18:11:53 -0400 (0:00:03.109)       0:06:40.185 ********** 
+2020-05-07 18:11:54,690 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:54,758 p=9532 u=djr |  TASK [openshift_node : Get cluster pull-secret] **************************************
+2020-05-07 18:11:54,758 p=9532 u=djr |  Thursday 07 May 2020  18:11:54 -0400 (0:00:01.151)       0:06:41.336 ********** 
+2020-05-07 18:11:57,389 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:11:57,480 p=9532 u=djr |  TASK [openshift_node : Write pull-secret to file] ************************************
+2020-05-07 18:11:57,481 p=9532 u=djr |  Thursday 07 May 2020  18:11:57 -0400 (0:00:02.721)       0:06:44.058 ********** 
+2020-05-07 18:11:59,220 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:11:59,286 p=9532 u=djr |  TASK [openshift_node : Get cluster release image] ************************************
+2020-05-07 18:11:59,286 p=9532 u=djr |  Thursday 07 May 2020  18:11:59 -0400 (0:00:01.805)       0:06:45.864 ********** 
+2020-05-07 18:12:01,087 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:12:01,195 p=9532 u=djr |  TASK [openshift_node : Set l_release_image fact] *************************************
+2020-05-07 18:12:01,195 p=9532 u=djr |  Thursday 07 May 2020  18:12:01 -0400 (0:00:01.908)       0:06:47.773 ********** 
+2020-05-07 18:12:01,245 p=9532 u=djr |  ok: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:01,318 p=9532 u=djr |  TASK [openshift_node : Check for cluster http proxy] *********************************
+2020-05-07 18:12:01,318 p=9532 u=djr |  Thursday 07 May 2020  18:12:01 -0400 (0:00:00.123)       0:06:47.896 ********** 
+2020-05-07 18:12:03,431 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:12:03,505 p=9532 u=djr |  TASK [openshift_node : Set http proxy] ***********************************************
+2020-05-07 18:12:03,506 p=9532 u=djr |  Thursday 07 May 2020  18:12:03 -0400 (0:00:02.187)       0:06:50.083 ********** 
+2020-05-07 18:12:03,541 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:03,628 p=9532 u=djr |  TASK [openshift_node : Check for cluster https proxy] ********************************
+2020-05-07 18:12:03,628 p=9532 u=djr |  Thursday 07 May 2020  18:12:03 -0400 (0:00:00.122)       0:06:50.206 ********** 
+2020-05-07 18:12:05,703 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:12:05,788 p=9532 u=djr |  TASK [openshift_node : Set https proxy] **********************************************
+2020-05-07 18:12:05,789 p=9532 u=djr |  Thursday 07 May 2020  18:12:05 -0400 (0:00:02.160)       0:06:52.367 ********** 
+2020-05-07 18:12:05,890 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:06,016 p=9532 u=djr |  TASK [openshift_node : Check for cluster no proxy] ***********************************
+2020-05-07 18:12:06,017 p=9532 u=djr |  Thursday 07 May 2020  18:12:06 -0400 (0:00:00.227)       0:06:52.594 ********** 
+2020-05-07 18:12:08,323 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:12:08,398 p=9532 u=djr |  TASK [openshift_node : Set no proxy] *************************************************
+2020-05-07 18:12:08,399 p=9532 u=djr |  Thursday 07 May 2020  18:12:08 -0400 (0:00:02.382)       0:06:54.977 ********** 
+2020-05-07 18:12:08,442 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:08,540 p=9532 u=djr |  TASK [openshift_node : Check for additional trust bundle] ****************************
+2020-05-07 18:12:08,540 p=9532 u=djr |  Thursday 07 May 2020  18:12:08 -0400 (0:00:00.141)       0:06:55.118 ********** 
+2020-05-07 18:12:10,171 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost]
+2020-05-07 18:12:10,258 p=9532 u=djr |  TASK [openshift_node : Set additional trust bundle] **********************************
+2020-05-07 18:12:10,259 p=9532 u=djr |  Thursday 07 May 2020  18:12:10 -0400 (0:00:01.718)       0:06:56.836 ********** 
+2020-05-07 18:12:10,308 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:10,382 p=9532 u=djr |  TASK [openshift_node : Copy additional trust bundle to system CA trust] **************
+2020-05-07 18:12:10,382 p=9532 u=djr |  Thursday 07 May 2020  18:12:10 -0400 (0:00:00.123)       0:06:56.960 ********** 
+2020-05-07 18:12:10,422 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:10,504 p=9532 u=djr |  TASK [openshift_node : Update CA trust] **********************************************
+2020-05-07 18:12:10,504 p=9532 u=djr |  Thursday 07 May 2020  18:12:10 -0400 (0:00:00.122)       0:06:57.082 ********** 
+2020-05-07 18:12:10,541 p=9532 u=djr |  skipping: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:10,606 p=9532 u=djr |  TASK [openshift_node : Pull release image] *******************************************
+2020-05-07 18:12:10,607 p=9532 u=djr |  Thursday 07 May 2020  18:12:10 -0400 (0:00:00.102)       0:06:57.184 ********** 
+2020-05-07 18:12:24,796 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:24,850 p=9532 u=djr |  TASK [openshift_node : Get machine controller daemon image from release image] *******
+2020-05-07 18:12:24,851 p=9532 u=djr |  Thursday 07 May 2020  18:12:24 -0400 (0:00:14.244)       0:07:11.429 ********** 
+2020-05-07 18:12:26,973 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:27,042 p=9532 u=djr |  TASK [openshift_node : Pull MCD image] ***********************************************
+2020-05-07 18:12:27,043 p=9532 u=djr |  Thursday 07 May 2020  18:12:27 -0400 (0:00:02.192)       0:07:13.621 ********** 
+2020-05-07 18:12:34,546 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:34,598 p=9532 u=djr |  TASK [openshift_node : Apply ignition manifest] **************************************
+2020-05-07 18:12:34,599 p=9532 u=djr |  Thursday 07 May 2020  18:12:34 -0400 (0:00:07.555)       0:07:21.176 ********** 
+2020-05-07 18:12:36,554 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:36,613 p=9532 u=djr |  TASK [openshift_node : Remove temp directory] ****************************************
+2020-05-07 18:12:36,613 p=9532 u=djr |  Thursday 07 May 2020  18:12:36 -0400 (0:00:02.014)       0:07:23.191 ********** 
+2020-05-07 18:12:37,066 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:12:37,143 p=9532 u=djr |  TASK [openshift_node : Reboot the host and wait for it to come back] *****************
+2020-05-07 18:12:37,143 p=9532 u=djr |  Thursday 07 May 2020  18:12:37 -0400 (0:00:00.529)       0:07:23.721 ********** 
+2020-05-07 18:14:10,136 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us]
+2020-05-07 18:14:10,263 p=9532 u=djr |  TASK [openshift_node : Approve node-bootstrapper CSR] ********************************
+2020-05-07 18:14:10,263 p=9532 u=djr |  Thursday 07 May 2020  18:14:10 -0400 (0:01:33.120)       0:08:56.841 ********** 
+2020-05-07 18:14:15,840 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost] => (item=ibmworker52.dc1-os4.ringen.us)
+2020-05-07 18:14:15,982 p=9532 u=djr |  TASK [openshift_node : Approve node CSR] *********************************************
+2020-05-07 18:14:15,983 p=9532 u=djr |  Thursday 07 May 2020  18:14:15 -0400 (0:00:05.719)       0:09:02.560 ********** 
+2020-05-07 18:14:17,766 p=9532 u=djr |  FAILED - RETRYING: Approve node CSR (6 retries left).
+2020-05-07 18:14:25,080 p=9532 u=djr |  FAILED - RETRYING: Approve node CSR (5 retries left).
+2020-05-07 18:14:33,898 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost] => (item=ibmworker52.dc1-os4.ringen.us)
+2020-05-07 18:14:34,013 p=9532 u=djr |  TASK [openshift_node : Wait for nodes to report ready] *******************************
+2020-05-07 18:14:34,014 p=9532 u=djr |  Thursday 07 May 2020  18:14:34 -0400 (0:00:18.031)       0:09:20.592 ********** 
+2020-05-07 18:14:35,868 p=9532 u=djr |  FAILED - RETRYING: Wait for nodes to report ready (36 retries left).
+2020-05-07 18:14:43,080 p=9532 u=djr |  FAILED - RETRYING: Wait for nodes to report ready (35 retries left).
+2020-05-07 18:14:49,678 p=9532 u=djr |  FAILED - RETRYING: Wait for nodes to report ready (34 retries left).
+2020-05-07 18:14:56,764 p=9532 u=djr |  FAILED - RETRYING: Wait for nodes to report ready (33 retries left).
+2020-05-07 18:15:03,504 p=9532 u=djr |  FAILED - RETRYING: Wait for nodes to report ready (32 retries left).
+2020-05-07 18:15:11,302 p=9532 u=djr |  changed: [ibmworker52.dc1-os4.ringen.us -> localhost] => (item=ibmworker52.dc1-os4.ringen.us)
+2020-05-07 18:15:11,357 p=9532 u=djr |  PLAY RECAP ***************************************************************************
+2020-05-07 18:15:11,359 p=9532 u=djr |  ibmworker52.dc1-os4.ringen.us : ok=37   changed=27   unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2020-05-07 18:15:11,360 p=9532 u=djr |  localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2020-05-07 18:15:11,362 p=9532 u=djr |  Thursday 07 May 2020  18:15:11 -0400 (0:00:37.348)       0:09:57.940 ********** 
+2020-05-07 18:15:11,363 p=9532 u=djr |  =============================================================================== 
+2020-05-07 18:15:11,397 p=9532 u=djr |  openshift_node : Install openshift support packages ------------------------- 308.32s
+2020-05-07 18:15:11,397 p=9532 u=djr |  openshift_node : Reboot the host and wait for it to come back ---------------- 93.12s
+2020-05-07 18:15:11,398 p=9532 u=djr |  openshift_node : Install openshift packages ---------------------------------- 62.81s
+2020-05-07 18:15:11,398 p=9532 u=djr |  openshift_node : Wait for nodes to report ready ------------------------------ 37.35s
+2020-05-07 18:15:11,398 p=9532 u=djr |  openshift_node : Approve node CSR -------------------------------------------- 18.03s
+2020-05-07 18:15:11,399 p=9532 u=djr |  openshift_node : Pull release image ------------------------------------------ 14.24s
+2020-05-07 18:15:11,400 p=9532 u=djr |  openshift_node : Pull MCD image ----------------------------------------------- 7.56s
+2020-05-07 18:15:11,400 p=9532 u=djr |  openshift_node : Approve node-bootstrapper CSR -------------------------------- 5.72s
+2020-05-07 18:15:11,400 p=9532 u=djr |  openshift_node : Get cluster nodes -------------------------------------------- 4.48s
+2020-05-07 18:15:11,400 p=9532 u=djr |  Gathering Facts --------------------------------------------------------------- 3.36s
+2020-05-07 18:15:11,401 p=9532 u=djr |  openshift_node : Write /etc/containers/registries.conf ------------------------ 3.11s
+2020-05-07 18:15:11,402 p=9532 u=djr |  openshift_node : Get cluster pull-secret -------------------------------------- 2.72s
+2020-05-07 18:15:11,403 p=9532 u=djr |  openshift_node : Enable the CRI-O service ------------------------------------- 2.66s
+2020-05-07 18:15:11,405 p=9532 u=djr |  openshift_node : Check for cluster no proxy ----------------------------------- 2.38s
+2020-05-07 18:15:11,405 p=9532 u=djr |  openshift_node : Wait for bootstrap endpoint to show up ----------------------- 2.32s
+2020-05-07 18:15:11,407 p=9532 u=djr |  openshift_node : Get machine controller daemon image from release image ------- 2.19s
+2020-05-07 18:15:11,407 p=9532 u=djr |  openshift_node : Check for cluster http proxy --------------------------------- 2.19s
+2020-05-07 18:15:11,408 p=9532 u=djr |  openshift_node : Check for cluster https proxy -------------------------------- 2.16s
+2020-05-07 18:15:11,408 p=9532 u=djr |  openshift_node : Apply ignition manifest -------------------------------------- 2.01s
+2020-05-07 18:15:11,408 p=9532 u=djr |  openshift_node : Get cluster release image ------------------------------------ 1.91s

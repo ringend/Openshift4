@@ -1,0 +1,176 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    console.openshift.io/console-config-version: "15085"
+    console.openshift.io/image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70ea1979fc44eb46f1016c14fb67441144b740bec3e53ef5235a6a0302a4b1f4
+    console.openshift.io/oauth-secret-version: "15094"
+    console.openshift.io/proxy-config-version: "429"
+    console.openshift.io/service-ca-config-version: "15088"
+    console.openshift.io/trusted-ca-config-version: "15101"
+    deployment.kubernetes.io/revision: "2"
+    operator.openshift.io/pull-spec: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70ea1979fc44eb46f1016c14fb67441144b740bec3e53ef5235a6a0302a4b1f4
+  creationTimestamp: "2020-05-11T13:18:25Z"
+  generation: 2
+  labels:
+    app: console
+    component: ui
+  name: console
+  namespace: openshift-console
+  resourceVersion: "18957"
+  selfLink: /apis/extensions/v1beta1/namespaces/openshift-console/deployments/console
+  uid: 587a3275-d7b6-4c14-9fec-2eeb7d1bb9fc
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: console
+      component: ui
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        console.openshift.io/console-config-version: "15085"
+        console.openshift.io/image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70ea1979fc44eb46f1016c14fb67441144b740bec3e53ef5235a6a0302a4b1f4
+        console.openshift.io/oauth-secret-version: "15094"
+        console.openshift.io/proxy-config-version: "429"
+        console.openshift.io/service-ca-config-version: "15088"
+        console.openshift.io/trusted-ca-config-version: "15101"
+        operator.openshift.io/pull-spec: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70ea1979fc44eb46f1016c14fb67441144b740bec3e53ef5235a6a0302a4b1f4
+      creationTimestamp: null
+      labels:
+        app: console
+        component: ui
+      name: console
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchLabels:
+                  app: console
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      containers:
+      - command:
+        - /opt/bridge/bin/bridge
+        - --public-dir=/opt/bridge/static
+        - --config=/var/console-config/console-config.yaml
+        - --service-ca-file=/var/service-ca/service-ca.crt
+        image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:70ea1979fc44eb46f1016c14fb67441144b740bec3e53ef5235a6a0302a4b1f4
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8443
+            scheme: HTTPS
+          initialDelaySeconds: 150
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: console
+        ports:
+        - containerPort: 443
+          name: https
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8443
+            scheme: HTTPS
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          requests:
+            cpu: 10m
+            memory: 100Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: FallbackToLogsOnError
+        volumeMounts:
+        - mountPath: /var/serving-cert
+          name: console-serving-cert
+          readOnly: true
+        - mountPath: /var/oauth-config
+          name: console-oauth-config
+          readOnly: true
+        - mountPath: /var/console-config
+          name: console-config
+          readOnly: true
+        - mountPath: /var/service-ca
+          name: service-ca
+          readOnly: true
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: trusted-ca-bundle
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      priorityClassName: system-cluster-critical
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+        operator: Exists
+      - effect: NoExecute
+        key: node.kubernetes.io/unreachable
+        operator: Exists
+        tolerationSeconds: 120
+      - effect: NoExecute
+        key: node.kubernetes.io/not-reachable
+        operator: Exists
+        tolerationSeconds: 120
+      volumes:
+      - name: console-serving-cert
+        secret:
+          defaultMode: 420
+          secretName: console-serving-cert
+      - name: console-oauth-config
+        secret:
+          defaultMode: 420
+          secretName: console-oauth-config
+      - configMap:
+          defaultMode: 420
+          name: console-config
+        name: console-config
+      - configMap:
+          defaultMode: 420
+          name: service-ca
+        name: service-ca
+      - configMap:
+          defaultMode: 420
+          items:
+          - key: ca-bundle.crt
+            path: tls-ca-bundle.pem
+          name: trusted-ca-bundle
+        name: trusted-ca-bundle
+status:
+  conditions:
+  - lastTransitionTime: "2020-05-11T13:18:25Z"
+    lastUpdateTime: "2020-05-11T13:18:25Z"
+    message: Deployment does not have minimum availability.
+    reason: MinimumReplicasUnavailable
+    status: "False"
+    type: Available
+  - lastTransitionTime: "2020-05-11T13:28:27Z"
+    lastUpdateTime: "2020-05-11T13:28:27Z"
+    message: ReplicaSet "console-84f8c55564" has timed out progressing.
+    reason: ProgressDeadlineExceeded
+    status: "False"
+    type: Progressing
+  observedGeneration: 2
+  replicas: 3
+  unavailableReplicas: 3
+  updatedReplicas: 1

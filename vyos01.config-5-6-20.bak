@@ -1,0 +1,339 @@
+interfaces {
+    dummy dum0 {
+        address 172.16.0.1/32
+    }
+    ethernet eth0 {
+        address 192.168.1.1/24
+        address 192.168.1.21/24
+        address 192.168.1.20/24
+        description INTERNET
+        hw-id 00:ff:aa:00:00:01
+    }
+    ethernet eth1 {
+        address 192.168.99.254/24
+        description "VBOX HOST NET"
+        hw-id 00:ff:aa:00:00:02
+    }
+    ethernet eth2 {
+        hw-id 00:ff:aa:00:00:03
+    }
+    ethernet eth3 {
+        hw-id 00:ff:aa:00:00:04
+    }
+    loopback lo {
+    }
+    openvpn vtun1 {
+        description "Tunnel to dc2-vyos01"
+        local-address 172.31.1.1 {
+        }
+        local-host 192.168.1.1
+        local-port 1195
+        mode site-to-site
+        persistent-tunnel
+        protocol udp
+        remote-address 172.31.1.2
+        remote-port 1195
+        shared-secret-key-file /config/auth/openvpn-1.key
+    }
+    openvpn vtun2 {
+        description "Tunnel to az2-vyo1"
+        local-address 172.31.1.4 {
+        }
+        local-port 1194
+        mode site-to-site
+        persistent-tunnel
+        protocol udp
+        remote-address 172.31.1.3
+        remote-host az2-vyos01.eastus2.cloudapp.azure.com
+        remote-port 1194
+        shared-secret-key-file /config/auth/az-vyos01-vpn.key
+    }
+    openvpn vtun5 {
+        description "Tunnel to aws-vyos01"
+        local-address 172.31.1.10 {
+        }
+        local-port 1191
+        mode site-to-site
+        persistent-tunnel
+        protocol udp
+        remote-address 172.31.1.9
+        remote-host 3.136.106.23
+        remote-port 1191
+        shared-secret-key-file /config/auth/openvpn-1.key
+    }
+}
+nat {
+    destination {
+        rule 100 {
+            destination {
+                address 192.168.1.20
+            }
+            inbound-interface eth0
+            translation {
+                address 192.168.99.100
+            }
+        }
+    }
+    source {
+        rule 100 {
+            destination {
+                address !192.168.0.0/16
+            }
+            outbound-interface eth0
+            source {
+                address 192.168.99.0/25
+            }
+            translation {
+                address 192.168.1.21
+            }
+        }
+    }
+}
+protocols {
+    bgp 65000 {
+        address-family {
+            ipv4-unicast {
+                network 192.168.99.0/24 {
+                }
+            }
+        }
+        neighbor 172.16.0.2 {
+            peer-group ibgp
+        }
+        neighbor 172.16.0.3 {
+            peer-group ibgp
+        }
+        neighbor 172.16.0.4 {
+            peer-group ibgp
+        }
+        neighbor 192.168.99.100 {
+            peer-group kube01
+        }
+        neighbor 192.168.99.101 {
+            peer-group kube01
+        }
+        neighbor 192.168.99.102 {
+            peer-group kube01
+        }
+        neighbor 192.168.99.105 {
+            peer-group kube01
+        }
+        parameters {
+            router-id 172.16.0.1
+        }
+        peer-group ibgp {
+            remote-as 65000
+            update-source dum0
+        }
+        peer-group kube01 {
+            remote-as 64512
+            update-source 192.168.99.254
+        }
+    }
+    ospf {
+        area 0 {
+            network 172.31.1.0/24
+            network 172.16.0.1/32
+        }
+        log-adjacency-changes {
+        }
+        parameters {
+            abr-type cisco
+            router-id 172.16.0.1
+        }
+    }
+    static {
+        route 0.0.0.0/0 {
+            next-hop 192.168.1.254 {
+            }
+        }
+    }
+}
+service {
+    dhcp-server {
+        shared-network-name KUBE {
+            authoritative
+            subnet 192.168.99.0/24 {
+                default-router 192.168.99.254
+                dns-server 192.168.99.253
+                dns-server 8.8.8.8
+                lease 4294967295
+                static-mapping kubem01 {
+                    ip-address 192.168.99.100
+                    mac-address aa:11:00:00:00:11
+                }
+                static-mapping kubew01 {
+                    ip-address 192.168.99.101
+                    mac-address aa:11:00:00:00:01
+                }
+                static-mapping kubew02 {
+                    ip-address 192.168.99.102
+                    mac-address aa:11:00:00:00:02
+                }
+                static-mapping okdinfa {
+                    ip-address 192.168.99.59
+                    mac-address a2:11:00:00:00:09
+                }
+                static-mapping okdmaster01 {
+                    ip-address 192.168.99.50
+                    mac-address a2:11:00:00:00:11
+                }
+                static-mapping okdwork01 {
+                    ip-address 192.168.99.51
+                    mac-address a2:11:00:00:00:01
+                }
+                static-mapping os3master01 {
+                    ip-address 192.168.99.30
+                    mac-address a2:13:00:00:00:11
+                }
+                static-mapping os3worker01 {
+                    ip-address 192.168.99.31
+                    mac-address a2:13:00:00:00:01
+                }
+                static-mapping os4bootstrap {
+                    ip-address 192.168.99.39
+                    mac-address a4:11:00:00:00:21
+                }
+                static-mapping os4master01 {
+                    ip-address 192.168.99.41
+                    mac-address a4:11:00:00:00:11
+                }
+                static-mapping os4master02 {
+                    ip-address 192.168.99.42
+                    mac-address a4:11:00:00:00:12
+                }
+                static-mapping os4master03 {
+                    ip-address 192.168.99.43
+                    mac-address a4:11:00:00:00:13
+                }
+                static-mapping os4worker01 {
+                    ip-address 192.168.99.45
+                    mac-address a4:11:00:00:00:01
+                }
+                static-mapping os4worker02 {
+                    ip-address 192.168.99.46
+                    mac-address a4:11:00:00:00:02
+                }
+            }
+        }
+    }
+    ssh {
+        port 22
+    }
+}
+system {
+    config-management {
+        commit-revisions 100
+    }
+    console {
+        device ttyS0 {
+            speed 115200
+        }
+    }
+    host-name dc1-vyos01
+    login {
+        user vyos {
+            authentication {
+                encrypted-password $6$b8SdSjvnE86G$m2Aljs25HMm8vjWdYGPQZmq4cp6I09Mz4bs8O0e9sXjl54XK2o5V.XR0r7n7ZnbaVcXK.f.YNX1RJdx33EmSI/
+                plaintext-password ""
+            }
+        }
+    }
+    name-server 8.8.8.8
+    ntp {
+        server 0.pool.ntp.org {
+        }
+        server 1.pool.ntp.org {
+        }
+        server 2.pool.ntp.org {
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level info
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+}
+vpn {
+    ipsec {
+        esp-group az-esp {
+            compression disable
+            lifetime 1800
+            mode tunnel
+            pfs enable
+            proposal 1 {
+                encryption 3des
+                hash sha256
+            }
+        }
+        esp-group ibm-esp {
+            compression disable
+            lifetime 86100
+            mode tunnel
+            pfs enable
+            proposal 1 {
+                encryption aes128
+                hash sha1
+            }
+        }
+        ike-group az-ike {
+            close-action none
+            ikev2-reauth no
+            key-exchange ikev2
+            lifetime 3600
+            proposal 1 {
+                dh-group 2
+                encryption 3des
+                hash sha256
+            }
+        }
+        ike-group ibm-ike {
+            close-action none
+            ikev2-reauth no
+            key-exchange ikev2
+            lifetime 86400
+            proposal 1 {
+                dh-group 2
+                encryption aes128
+                hash sha1
+            }
+        }
+        ipsec-interfaces {
+            interface eth0
+        }
+        site-to-site {
+            peer 52.117.168.58 {
+                authentication {
+                    mode pre-shared-secret
+                    pre-shared-secret djr-key1
+                }
+                connection-type initiate
+                description "IPSEC to IBM"
+                ike-group ibm-ike
+                ikev2-reauth inherit
+                local-address any
+                tunnel 0 {
+                    allow-nat-networks disable
+                    allow-public-networks disable
+                    esp-group ibm-esp
+                    local {
+                        prefix 192.168.98.0/23
+                    }
+                    remote {
+                        prefix 192.168.93.0/24
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* Warning: Do not remove the following line. */
+/* === vyatta-config-version: "broadcast-relay@1:cluster@1:config-management@1:conntrack@1:conntrack-sync@1:dhcp-relay@2:dhcp-server@5:dns-forwarding@2:firewall@5:interfaces@5:ipsec@5:l2tp@2:lldp@1:mdns@1:nat@4:ntp@1:pptp@1:qos@1:quagga@5:snmp@1:ssh@1:sstp@2:system@16:vrrp@2:vyos-accel-ppp@2:wanloadbalance@3:webgui@1:webproxy@2:zone-policy@1" === */
+/* Release version: 1.3-rolling-202003230217 */

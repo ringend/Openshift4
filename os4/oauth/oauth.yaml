@@ -1,0 +1,27 @@
+
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"config.openshift.io/v1","kind":"OAuth","metadata":{"annotations":{},"name":"cluster"},"spec":{"identityProviders":[{"htpasswd":{"fileData":{"name":"htpass-secret"}},"mappingMethod":"claim","name":"htpasswd-2","type":"HTPasswd"}]}}
+    release.openshift.io/create-only: "true"
+  creationTimestamp: "2020-04-28T13:08:12Z"
+  generation: 3
+  name: cluster
+  resourceVersion: "329468"
+  selfLink: /apis/config.openshift.io/v1/oauths/cluster
+  uid: 37417beb-f4fa-4977-9f9c-61e8b0aea9e3
+spec:
+  identityProviders:
+  - htpasswd:
+      fileData:
+        name: htpass-secret
+    mappingMethod: claim
+    name: htpasswd-2
+    type: HTPasswd
+

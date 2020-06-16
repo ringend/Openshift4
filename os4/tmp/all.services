@@ -1,0 +1,958 @@
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                172.30.0.1
+Port:              https  443/TCP
+TargetPort:        6443/TCP
+Endpoints:         192.168.99.41:6443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              openshift
+Namespace:         default
+Labels:            <none>
+Annotations:       <none>
+Selector:          <none>
+Type:              ExternalName
+IP:                
+External Name:     kubernetes.default.svc.cluster.local
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              web-1
+Namespace:         default
+Labels:            app=web-1
+                   app.kubernetes.io/component=web-1
+                   app.kubernetes.io/instance=web-1
+Annotations:       openshift.io/generated-by: OpenShiftNewApp
+Selector:          deploymentconfig=web-1
+Type:              ClusterIP
+IP:                172.30.5.144
+Port:              8080-tcp  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         10.241.0.97:8080
+Port:              8443-tcp  8443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.97:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              kubelet
+Namespace:         kube-system
+Labels:            k8s-app=kubelet
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                None
+Port:              https-metrics  10250/TCP
+TargetPort:        10250/TCP
+Endpoints:         192.168.93.43:10250,192.168.93.53:10250,192.168.99.41:10250
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-apiserver-operator
+Labels:            app=openshift-apiserver-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: openshift-apiserver-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=openshift-apiserver-operator
+Type:              ClusterIP
+IP:                172.30.161.236
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.5:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              api
+Namespace:         openshift-apiserver
+Labels:            <none>
+Annotations:       prometheus.io/scheme: https
+                   prometheus.io/scrape: true
+                   service.alpha.openshift.io/serving-cert-secret-name: serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          apiserver=true
+Type:              ClusterIP
+IP:                172.30.112.61
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.32:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-authentication-operator
+Labels:            app=authentication-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=authentication-operator
+Type:              ClusterIP
+IP:                172.30.171.39
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.45:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              oauth-openshift
+Namespace:         openshift-authentication
+Labels:            app=oauth-openshift
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: v4-0-config-system-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=oauth-openshift
+Type:              ClusterIP
+IP:                172.30.57.99
+Port:              https  443/TCP
+TargetPort:        6443/TCP
+Endpoints:         10.241.0.69:6443,10.241.0.72:6443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              cco-metrics
+Namespace:         openshift-cloud-credential-operator
+Labels:            <none>
+Annotations:       <none>
+Selector:          app=cloud-credential-operator
+Type:              ClusterIP
+IP:                172.30.148.73
+Port:              cco-metrics  2112/TCP
+TargetPort:        2112/TCP
+Endpoints:         10.241.0.4:2112
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              controller-manager-service
+Namespace:         openshift-cloud-credential-operator
+Labels:            control-plane=controller-manager
+                   controller-tools.k8s.io=1.0
+Annotations:       <none>
+Selector:          control-plane=controller-manager,controller-tools.k8s.io=1.0
+Type:              ClusterIP
+IP:                172.30.168.38
+Port:              <unset>  443/TCP
+TargetPort:        443/TCP
+Endpoints:         10.241.0.4:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              machine-approver
+Namespace:         openshift-cluster-machine-approver
+Labels:            app=machine-approver
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: machine-approver-tls
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=machine-approver
+Type:              ClusterIP
+IP:                None
+Port:              https  9192/TCP
+TargetPort:        https/TCP
+Endpoints:         192.168.99.41:9192
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-cluster-samples-operator
+Labels:            name=cluster-samples-operator
+Annotations:       service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-secret-name: samples-operator-tls
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          name=cluster-samples-operator
+Type:              ClusterIP
+IP:                None
+Port:              <unset>  60000/TCP
+TargetPort:        60000/TCP
+Endpoints:         10.241.0.73:60000
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              cluster-version-operator
+Namespace:         openshift-cluster-version
+Labels:            k8s-app=cluster-version-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+Selector:          k8s-app=cluster-version-operator
+Type:              ClusterIP
+IP:                172.30.163.208
+Port:              metrics  9099/TCP
+TargetPort:        9099/TCP
+Endpoints:         192.168.99.41:9099
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-console-operator
+Labels:            name=console-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          name=console-operator
+Type:              ClusterIP
+IP:                172.30.116.136
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.35:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              console
+Namespace:         openshift-console
+Labels:            app=console
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: console-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=console,component=ui
+Type:              ClusterIP
+IP:                172.30.180.232
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.74:8443,10.241.0.87:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              downloads
+Namespace:         openshift-console
+Labels:            <none>
+Annotations:       <none>
+Selector:          app=console,component=downloads
+Type:              ClusterIP
+IP:                172.30.7.10
+Port:              http  80/TCP
+TargetPort:        8080/TCP
+Endpoints:         10.241.0.33:8080,10.241.0.34:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-controller-manager-operator
+Labels:            app=openshift-controller-manager-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+                   service.alpha.openshift.io/serving-cert-secret-name: openshift-controller-manager-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=openshift-controller-manager-operator
+Type:              ClusterIP
+IP:                172.30.209.129
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.8:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              controller-manager
+Namespace:         openshift-controller-manager
+Labels:            <none>
+Annotations:       prometheus.io/scheme: https
+                   prometheus.io/scrape: true
+                   service.alpha.openshift.io/serving-cert-secret-name: serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          controller-manager=true
+Type:              ClusterIP
+IP:                172.30.61.28
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.101:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-dns-operator
+Labels:            name=dns-operator
+Annotations:       service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-secret-name: metrics-tls
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          name=dns-operator
+Type:              ClusterIP
+IP:                172.30.250.92
+Port:              metrics  9393/TCP
+TargetPort:        metrics/TCP
+Endpoints:         10.241.0.13:9393
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              dns-default
+Namespace:         openshift-dns
+Labels:            dns.operator.openshift.io/owning-dns=default
+Annotations:       <none>
+Selector:          dns.operator.openshift.io/daemonset-dns=default
+Type:              ClusterIP
+IP:                172.30.0.10
+Port:              dns  53/UDP
+TargetPort:        dns/UDP
+Endpoints:         10.241.0.17:5353
+Port:              dns-tcp  53/TCP
+TargetPort:        dns-tcp/TCP
+Endpoints:         10.241.0.17:5353
+Port:              metrics  9153/TCP
+TargetPort:        metrics/TCP
+Endpoints:         10.241.0.17:9153
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              etcd
+Namespace:         openshift-etcd
+Labels:            k8s-app=etcd
+Annotations:       <none>
+Selector:          k8s-app=etcd
+Type:              ClusterIP
+IP:                172.30.131.1
+Port:              etcd  2379/TCP
+TargetPort:        2379/TCP
+Endpoints:         192.168.99.41:2379
+Port:              etcd-metrics  9979/TCP
+TargetPort:        9979/TCP
+Endpoints:         192.168.99.41:9979
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              host-etcd
+Namespace:         openshift-etcd
+Labels:            k8s-app=etcd
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                None
+Port:              etcd  2379/TCP
+TargetPort:        2379/TCP
+Endpoints:         192.0.2.1:2379
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              image-registry-operator
+Namespace:         openshift-image-registry
+Labels:            name=image-registry-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: image-registry-operator-tls
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          name=cluster-image-registry-operator
+Type:              ClusterIP
+IP:                None
+Port:              <unset>  60000/TCP
+TargetPort:        60000/TCP
+Endpoints:         10.241.0.39:60000
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-ingress-operator
+Labels:            name=ingress-operator
+Annotations:       service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-secret-name: metrics-tls
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          name=ingress-operator
+Type:              ClusterIP
+IP:                172.30.62.162
+Port:              metrics  9393/TCP
+TargetPort:        metrics/TCP
+Endpoints:         10.241.0.47:9393
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              router-internal-default
+Namespace:         openshift-ingress
+Labels:            ingresscontroller.operator.openshift.io/owning-ingresscontroller=default
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: router-metrics-certs-default
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          ingresscontroller.operator.openshift.io/deployment-ingresscontroller=default
+Type:              ClusterIP
+IP:                172.30.52.248
+Port:              http  80/TCP
+TargetPort:        http/TCP
+Endpoints:         192.168.99.41:80
+Port:              https  443/TCP
+TargetPort:        https/TCP
+Endpoints:         192.168.99.41:443
+Port:              metrics  1936/TCP
+TargetPort:        1936/TCP
+Endpoints:         192.168.99.41:1936
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-insights
+Labels:            app=insights-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+                   service.alpha.openshift.io/serving-cert-secret-name: openshift-insights-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=insights-operator
+Type:              ClusterIP
+IP:                172.30.144.144
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.40:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-kube-apiserver-operator
+Labels:            app=kube-apiserver-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+                   service.alpha.openshift.io/serving-cert-secret-name: kube-apiserver-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=kube-apiserver-operator
+Type:              ClusterIP
+IP:                172.30.238.40
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.9:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              apiserver
+Namespace:         openshift-kube-apiserver
+Labels:            <none>
+Annotations:       prometheus.io/scheme: https
+                   prometheus.io/scrape: true
+Selector:          apiserver=true
+Type:              ClusterIP
+IP:                172.30.135.107
+Port:              https  443/TCP
+TargetPort:        6443/TCP
+Endpoints:         192.168.99.41:6443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-kube-controller-manager-operator
+Labels:            app=kube-controller-manager-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: kube-controller-manager-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=kube-controller-manager-operator
+Type:              ClusterIP
+IP:                172.30.116.39
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.7:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              kube-controller-manager
+Namespace:         openshift-kube-controller-manager
+Labels:            <none>
+Annotations:       prometheus.io/scheme: https
+                   prometheus.io/scrape: true
+                   service.alpha.openshift.io/serving-cert-secret-name: serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          kube-controller-manager=true
+Type:              ClusterIP
+IP:                172.30.245.129
+Port:              https  443/TCP
+TargetPort:        10257/TCP
+Endpoints:         192.168.99.41:10257
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-kube-scheduler-operator
+Labels:            app=openshift-kube-scheduler-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+                   service.alpha.openshift.io/serving-cert-secret-name: kube-scheduler-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=openshift-kube-scheduler-operator
+Type:              ClusterIP
+IP:                172.30.148.248
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.2:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              scheduler
+Namespace:         openshift-kube-scheduler
+Labels:            <none>
+Annotations:       prometheus.io/scheme: https
+                   prometheus.io/scrape: true
+                   service.alpha.openshift.io/serving-cert-secret-name: serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          scheduler=true
+Type:              ClusterIP
+IP:                172.30.52.133
+Port:              https  443/TCP
+TargetPort:        10259/TCP
+Endpoints:         192.168.99.41:10259
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              cluster-autoscaler-operator
+Namespace:         openshift-machine-api
+Labels:            k8s-app=cluster-autoscaler-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-secret-name: cluster-autoscaler-operator-cert
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          k8s-app=cluster-autoscaler-operator
+Type:              ClusterIP
+IP:                172.30.13.89
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.67:8443
+Port:              metrics  9192/TCP
+TargetPort:        metrics/TCP
+Endpoints:         10.241.0.67:9192
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              machine-api-operator
+Namespace:         openshift-machine-api
+Labels:            k8s-app=machine-api-operator
+Annotations:       exclude.release.openshift.io/internal-openshift-hosted: true
+                   service.alpha.openshift.io/serving-cert-secret-name: machine-api-operator-tls
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          k8s-app=machine-api-operator
+Type:              ClusterIP
+IP:                172.30.200.201
+Port:              https  8443/TCP
+TargetPort:        https/TCP
+Endpoints:         10.241.0.15:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              machine-config-daemon
+Namespace:         openshift-machine-config-operator
+Labels:            k8s-app=machine-config-daemon
+Annotations:       service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-secret-name: proxy-tls
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          k8s-app=machine-config-daemon
+Type:              ClusterIP
+IP:                172.30.94.182
+Port:              metrics  9001/TCP
+TargetPort:        9001/TCP
+Endpoints:         192.168.99.41:9001
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              certified-operators
+Namespace:         openshift-marketplace
+Labels:            opsrc-owner-name=certified-operators
+                   opsrc-owner-namespace=openshift-marketplace
+Annotations:       <none>
+Selector:          marketplace.operatorSource=certified-operators
+Type:              ClusterIP
+IP:                172.30.222.94
+Port:              grpc  50051/TCP
+TargetPort:        50051/TCP
+Endpoints:         10.241.0.93:50051
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              community-operators
+Namespace:         openshift-marketplace
+Labels:            opsrc-owner-name=community-operators
+                   opsrc-owner-namespace=openshift-marketplace
+Annotations:       <none>
+Selector:          marketplace.operatorSource=community-operators
+Type:              ClusterIP
+IP:                172.30.217.115
+Port:              grpc  50051/TCP
+TargetPort:        50051/TCP
+Endpoints:         10.241.0.95:50051
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              marketplace-operator-metrics
+Namespace:         openshift-marketplace
+Labels:            name=marketplace-operator
+Annotations:       <none>
+Selector:          name=marketplace-operator
+Type:              ClusterIP
+IP:                172.30.150.236
+Port:              metrics  8383/TCP
+TargetPort:        8383/TCP
+Endpoints:         10.241.0.44:8383
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              redhat-operators
+Namespace:         openshift-marketplace
+Labels:            opsrc-owner-name=redhat-operators
+                   opsrc-owner-namespace=openshift-marketplace
+Annotations:       <none>
+Selector:          marketplace.operatorSource=redhat-operators
+Type:              ClusterIP
+IP:                172.30.160.145
+Port:              grpc  50051/TCP
+TargetPort:        50051/TCP
+Endpoints:         10.241.0.94:50051
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              alertmanager-main
+Namespace:         openshift-monitoring
+Labels:            alertmanager=main
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: alertmanager-main-tls
+Selector:          alertmanager=main,app=alertmanager
+Type:              ClusterIP
+IP:                172.30.1.132
+Port:              web  9094/TCP
+TargetPort:        web/TCP
+Endpoints:         10.241.0.83:9095,10.241.0.89:9095,10.241.0.90:9095
+Session Affinity:  ClientIP
+Events:            <none>
+
+
+Name:              alertmanager-operated
+Namespace:         openshift-monitoring
+Labels:            operated-alertmanager=true
+Annotations:       <none>
+Selector:          app=alertmanager
+Type:              ClusterIP
+IP:                None
+Port:              web  9093/TCP
+TargetPort:        9093/TCP
+Endpoints:         10.241.0.83:9093,10.241.0.89:9093,10.241.0.90:9093
+Port:              mesh-tcp  9094/TCP
+TargetPort:        9094/TCP
+Endpoints:         10.241.0.83:9094,10.241.0.89:9094,10.241.0.90:9094
+Port:              mesh-udp  9094/UDP
+TargetPort:        9094/UDP
+Endpoints:         10.241.0.83:9094,10.241.0.89:9094,10.241.0.90:9094
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              cluster-monitoring-operator
+Namespace:         openshift-monitoring
+Labels:            app=cluster-monitoring-operator
+Annotations:       <none>
+Selector:          app=cluster-monitoring-operator
+Type:              ClusterIP
+IP:                None
+Port:              http  8080/TCP
+TargetPort:        http/TCP
+Endpoints:         10.241.0.36:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              grafana
+Namespace:         openshift-monitoring
+Labels:            app=grafana
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: grafana-tls
+Selector:          app=grafana
+Type:              ClusterIP
+IP:                172.30.84.98
+Port:              https  3000/TCP
+TargetPort:        https/TCP
+Endpoints:         10.241.0.86:3000
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              kube-state-metrics
+Namespace:         openshift-monitoring
+Labels:            k8s-app=kube-state-metrics
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: kube-state-metrics-tls
+Selector:          app=kube-state-metrics
+Type:              ClusterIP
+IP:                None
+Port:              https-main  8443/TCP
+TargetPort:        https-main/TCP
+Endpoints:         10.241.0.54:8443
+Port:              https-self  9443/TCP
+TargetPort:        https-self/TCP
+Endpoints:         10.241.0.54:9443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              node-exporter
+Namespace:         openshift-monitoring
+Labels:            k8s-app=node-exporter
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: node-exporter-tls
+Selector:          app=node-exporter
+Type:              ClusterIP
+IP:                None
+Port:              https  9100/TCP
+TargetPort:        https/TCP
+Endpoints:         192.168.99.41:9100
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              openshift-state-metrics
+Namespace:         openshift-monitoring
+Labels:            k8s-app=openshift-state-metrics
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: openshift-state-metrics-tls
+Selector:          k8s-app=openshift-state-metrics
+Type:              ClusterIP
+IP:                None
+Port:              https-main  8443/TCP
+TargetPort:        https-main/TCP
+Endpoints:         10.241.0.55:8443
+Port:              https-self  9443/TCP
+TargetPort:        https-self/TCP
+Endpoints:         10.241.0.55:9443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              prometheus-adapter
+Namespace:         openshift-monitoring
+Labels:            name=prometheus-adapter
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: prometheus-adapter-tls
+Selector:          name=prometheus-adapter
+Type:              ClusterIP
+IP:                172.30.252.28
+Port:              https  443/TCP
+TargetPort:        6443/TCP
+Endpoints:         10.241.0.110:6443,10.241.0.111:6443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              prometheus-k8s
+Namespace:         openshift-monitoring
+Labels:            prometheus=k8s
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: prometheus-k8s-tls
+Selector:          app=prometheus,prometheus=k8s
+Type:              ClusterIP
+IP:                172.30.87.142
+Port:              web  9091/TCP
+TargetPort:        web/TCP
+Endpoints:         <none>
+Port:              tenancy  9092/TCP
+TargetPort:        tenancy/TCP
+Endpoints:         <none>
+Session Affinity:  ClientIP
+Events:            <none>
+
+
+Name:              prometheus-operated
+Namespace:         openshift-monitoring
+Labels:            operated-prometheus=true
+Annotations:       <none>
+Selector:          app=prometheus
+Type:              ClusterIP
+IP:                None
+Port:              web  9090/TCP
+TargetPort:        web/TCP
+Endpoints:         <none>
+Port:              grpc  10901/TCP
+TargetPort:        grpc/TCP
+Endpoints:         <none>
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              prometheus-operator
+Namespace:         openshift-monitoring
+Labels:            app.kubernetes.io/component=controller
+                   app.kubernetes.io/name=prometheus-operator
+                   app.kubernetes.io/version=v0.34.1
+Annotations:       <none>
+Selector:          app.kubernetes.io/component=controller,app.kubernetes.io/name=prometheus-operator
+Type:              ClusterIP
+IP:                None
+Port:              http  8080/TCP
+TargetPort:        http/TCP
+Endpoints:         10.241.0.79:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              telemeter-client
+Namespace:         openshift-monitoring
+Labels:            k8s-app=telemeter-client
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: telemeter-client-tls
+Selector:          k8s-app=telemeter-client
+Type:              ClusterIP
+IP:                None
+Port:              https  8443/TCP
+TargetPort:        https/TCP
+Endpoints:         10.241.0.80:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              thanos-querier
+Namespace:         openshift-monitoring
+Labels:            app.kubernetes.io/name=thanos-querier
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: thanos-querier-tls
+Selector:          app.kubernetes.io/name=thanos-querier
+Type:              ClusterIP
+IP:                172.30.88.133
+Port:              web  9091/TCP
+TargetPort:        web/TCP
+Endpoints:         10.241.0.91:9091,10.241.0.92:9091
+Port:              tenancy  9092/TCP
+TargetPort:        tenancy/TCP
+Endpoints:         10.241.0.91:9092,10.241.0.92:9092
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              multus-admission-controller
+Namespace:         openshift-multus
+Labels:            app=multus-admission-controller
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: multus-admission-controller-secret
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=multus-admission-controller
+Type:              ClusterIP
+IP:                172.30.69.166
+Port:              <unset>  443/TCP
+TargetPort:        6443/TCP
+Endpoints:         10.241.0.14:6443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              multus-admission-controller-monitor-service
+Namespace:         openshift-multus
+Labels:            name=multus-admission-controller-monitor-service
+Annotations:       <none>
+Selector:          app=multus-admission-controller
+Type:              ClusterIP
+IP:                None
+Port:              metrics  9091/TCP
+TargetPort:        9091/TCP
+Endpoints:         10.241.0.14:9091
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              catalog-operator-metrics
+Namespace:         openshift-operator-lifecycle-manager
+Labels:            app=catalog-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: catalog-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=catalog-operator
+Type:              ClusterIP
+IP:                172.30.25.58
+Port:              https-metrics  8081/TCP
+TargetPort:        metrics/TCP
+Endpoints:         10.241.0.46:8081
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              olm-operator-metrics
+Namespace:         openshift-operator-lifecycle-manager
+Labels:            app=olm-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: olm-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=olm-operator
+Type:              ClusterIP
+IP:                172.30.150.51
+Port:              https-metrics  8081/TCP
+TargetPort:        metrics/TCP
+Endpoints:         10.241.0.41:8081
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              v1-packages-operators-coreos-com
+Namespace:         openshift-operator-lifecycle-manager
+Labels:            <none>
+Annotations:       <none>
+Selector:          app=packageserver
+Type:              ClusterIP
+IP:                172.30.79.236
+Port:              <unset>  443/TCP
+TargetPort:        5443/TCP
+Endpoints:         10.241.0.108:5443,10.241.0.109:5443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              sdn
+Namespace:         openshift-sdn
+Labels:            app=sdn
+Annotations:       <none>
+Selector:          app=sdn
+Type:              ClusterIP
+IP:                None
+Port:              metrics  9101/TCP
+TargetPort:        9101/TCP
+Endpoints:         192.168.99.41:9101
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-service-catalog-apiserver-operator
+Labels:            app=openshift-service-catalog-apiserver-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: openshift-service-catalog-apiserver-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=openshift-service-catalog-apiserver-operator
+Type:              ClusterIP
+IP:                172.30.231.36
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.42:8443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              metrics
+Namespace:         openshift-service-catalog-controller-manager-operator
+Labels:            app=openshift-service-catalog-controller-manager-operator
+Annotations:       service.alpha.openshift.io/serving-cert-secret-name: openshift-service-catalog-controller-manager-operator-serving-cert
+                   service.alpha.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+                   service.beta.openshift.io/serving-cert-signed-by: openshift-service-serving-signer@1589387503
+Selector:          app=openshift-service-catalog-controller-manager-operator
+Type:              ClusterIP
+IP:                172.30.104.225
+Port:              https  443/TCP
+TargetPort:        8443/TCP
+Endpoints:         10.241.0.37:8443
+Session Affinity:  None
+Events:            <none>

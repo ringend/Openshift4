@@ -1,0 +1,59 @@
+#---------------------------------------------------------------------
+# Example configuration for a possible web application.  See the
+# full configuration options online.
+#
+#   http://haproxy.1wt.eu/download/1.4/doc/configuration.txt
+#
+#---------------------------------------------------------------------
+
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    log         127.0.0.1 local2
+
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     500
+    user        haproxy
+    group       haproxy
+    daemon
+
+    # turn on stats unix socket
+    stats socket /var/lib/haproxy/stats
+
+#---------------------------------------------------------------------
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    log                     global
+    timeout connect         10s
+    timeout client          10s
+    timeout server          10s
+    timeout check           10s
+
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+frontend os4controller_front
+    bind *:6443
+    bind *:22623
+    bind *:443
+#    bind *:80
+    mode tcp 
+    default_backend os4controller_backend
+
+
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend os4controller_backend 
+    balance roundrobin
+    stick-table type ip size 200k expire 30m
+    stick on src
+    server os4master01 192.168.99.41
+    server os4master02 192.168.99.42
+    server os4master03 192.168.99.43
+
+

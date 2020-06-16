@@ -1,0 +1,63 @@
+apiVersion: v1
+items:
+- apiVersion: imageregistry.operator.openshift.io/v1
+  kind: Config
+  metadata:
+    creationTimestamp: "2020-05-10T15:05:20Z"
+    finalizers:
+    - imageregistry.operator.openshift.io/finalizer
+    generation: 1
+    name: cluster
+    resourceVersion: "34100"
+    selfLink: /apis/imageregistry.operator.openshift.io/v1/configs/cluster
+    uid: 5e4672f8-3308-406d-a07d-ad1141bb3d8b
+  spec:
+    defaultRoute: false
+    disableRedirect: false
+    httpSecret: edddbe35e8f9db548040d1c26154a301939cd8e05d1918e6d4d36125018e8cab947e3623e2d1caf33d2c3da5ed8d26787c2751ee3475f01f5bfd8751f31a063b
+    logging: 2
+    managementState: Removed
+    proxy:
+      http: ""
+      https: ""
+      noProxy: ""
+    readOnly: false
+    replicas: 1
+    requests:
+      read:
+        maxInQueue: 0
+        maxRunning: 0
+        maxWaitInQueue: 0s
+      write:
+        maxInQueue: 0
+        maxRunning: 0
+        maxWaitInQueue: 0s
+    storage: {}
+  status:
+    conditions:
+    - lastTransitionTime: "2020-05-10T16:26:58Z"
+      message: All registry resources are removed
+      reason: Removed
+      status: "False"
+      type: Progressing
+    - lastTransitionTime: "2020-05-10T15:05:20Z"
+      message: The registry is removed
+      reason: Removed
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2020-05-10T15:05:20Z"
+      status: "False"
+      type: Degraded
+    - lastTransitionTime: "2020-05-10T15:05:20Z"
+      message: The registry is removed
+      reason: Removed
+      status: "True"
+      type: Removed
+    observedGeneration: 1
+    readyReplicas: 0
+    storage: {}
+    storageManaged: false
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,813 @@
+Copying system trust bundle
+I0511 13:06:21.834885       1 cmd.go:188] Using service-serving-cert provided certificates
+I0511 13:06:21.840902       1 observer_polling.go:137] Starting file observer
+I0511 13:06:21.843386       1 observer_polling.go:137] Starting file observer
+I0511 13:06:26.376779       1 leaderelection.go:241] attempting to acquire leader lease  openshift-authentication-operator/cluster-authentication-operator-lock...
+I0511 13:06:26.378609       1 secure_serving.go:123] Serving securely on [::]:8443
+I0511 13:06:26.685977       1 leaderelection.go:251] successfully acquired lease openshift-authentication-operator/cluster-authentication-operator-lock
+I0511 13:06:26.687963       1 event.go:255] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"openshift-authentication-operator", Name:"cluster-authentication-operator-lock", UID:"628b2c0a-4603-4ca4-a6f8-32a02e83f7ed", APIVersion:"v1", ResourceVersion:"9661", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' 38c1a016-ca89-459d-941a-5ebf1799af39 became leader
+I0511 13:06:26.774868       1 remove_stale_conditions.go:71] Starting RemoveStaleConditions
+I0511 13:06:26.797544       1 resourcesync_controller.go:218] Starting ResourceSyncController
+I0511 13:06:26.797868       1 status_controller.go:189] Starting StatusSyncer-authentication
+I0511 13:06:26.798064       1 unsupportedconfigoverrides_controller.go:152] Starting UnsupportedConfigOverridesController
+I0511 13:06:26.798176       1 logging_controller.go:83] Starting LogLevelController
+I0511 13:06:26.798235       1 controller.go:205] Starting RouterCertsDomainValidationController
+I0511 13:06:26.798311       1 management_state_controller.go:102] Starting management-state-controller-authentication
+I0511 13:06:26.798706       1 controller.go:53] Starting AuthenticationOperator2
+I0511 13:06:27.014661       1 status_controller.go:110] clusteroperator/authentication not found
+I0511 13:06:27.326612       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Upgradeable"}],"relatedObjects":[{"group":"operator.openshift.io","name":"cluster","resource":"authentications"},{"group":"config.openshift.io","name":"cluster","resource":"authentications"},{"group":"config.openshift.io","name":"cluster","resource":"infrastructures"},{"group":"config.openshift.io","name":"cluster","resource":"oauths"},{"group":"route.openshift.io","name":"oauth-openshift","resource":"routes"},{"group":"","name":"oauth-openshift","resource":"services"},{"group":"","name":"openshift-config","resource":"namespaces"},{"group":"","name":"openshift-config-managed","resource":"namespaces"},{"group":"","name":"openshift-authentication","resource":"namespaces"},{"group":"","name":"openshift-authentication-operator","resource":"namespaces"},{"group":"","name":"openshift-ingress","resource":"namespaces"}]}}
+I0511 13:06:27.392845       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Upgradeable"}]}}
+I0511 13:06:27.467006       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:27.467602       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded changed from Unknown to False ("")
+I0511 13:06:27.571254       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Upgradeable changed from Unknown to True ("")
+I0511 13:06:27.571806       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","message":"RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:27.675049       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "" to "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found"
+I0511 13:06:27.730957       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'SecretCreated' Created Secret/v4-0-config-system-router-certs -n openshift-authentication because it was missing
+I0511 13:06:28.179186       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:28.273622       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found" to ""
+I0511 13:06:28.276577       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","message":"RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+E0511 13:06:28.284452       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+I0511 13:06:28.395634       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","message":"RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:28.395777       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "" to "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []"
+I0511 13:06:28.481421       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","message":"RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:28.481668       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []" to "RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []"
+E0511 13:06:28.583094       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+I0511 13:06:28.659850       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []" to "RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []"
+E0511 13:06:29.130889       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+I0511 13:06:29.176352       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","message":"RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:29.349027       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:06:27Z","message":"RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:06:29.349271       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []" to "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []"
+I0511 13:06:29.541990       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouterCertsDegraded: secret/v4-0-config-system-router-certs -n openshift-authentication: could not be retrieved: secret \"v4-0-config-system-router-certs\" not found\nRouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []" to "RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []"
+E0511 13:06:29.672213       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:29.915002       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:30.092649       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:30.424668       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:30.552946       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:30.870971       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:32.284139       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:35.027113       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:40.186783       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:06:50.526838       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:07:11.152849       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:07:52.153119       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+W0511 13:08:03.607852       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 11227 (11254)
+I0511 13:08:37.602366       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:08:37Z","message":"RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []","reason":"RouteStatusDegradedFailedHost","status":"True","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:08:37.616778       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded changed from False to True ("RouteStatusDegraded: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []")
+I0511 13:08:47.872926       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.873621       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.873924       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.881254       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.881791       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.882197       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.882566       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.882934       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.883340       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.889288       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.895238       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.895927       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.896339       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.897070       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.897468       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.907277       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.913639       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.914742       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.915005       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:08:47.915035       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+W0511 13:08:49.319497       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Deployment ended with: too old resource version: 9422 (9880)
+W0511 13:08:49.319897       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 9661 (11570)
+W0511 13:08:49.320331       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Proxy ended with: too old resource version: 7495 (10045)
+W0511 13:08:49.320625       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Service ended with: too old resource version: 9340 (9842)
+W0511 13:08:49.323498       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Infrastructure ended with: too old resource version: 8807 (11658)
+W0511 13:08:49.323719       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Ingress ended with: too old resource version: 8807 (11676)
+W0511 13:08:49.323810       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 9661 (11570)
+W0511 13:08:49.492639       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Authentication ended with: too old resource version: 8396 (11666)
+W0511 13:08:49.492884       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.OAuth ended with: too old resource version: 9082 (11676)
+W0511 13:08:49.498152       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 9661 (11570)
+W0511 13:08:49.498888       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 9676 (11570)
+W0511 13:08:54.682268       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Console ended with: too old resource version: 8649 (12042)
+W0511 13:08:55.729124       1 reflector.go:299] github.com/openshift/client-go/operator/informers/externalversions/factory.go:101: watch of *v1.Authentication ended with: too old resource version: 9759 (12051)
+W0511 13:08:55.915859       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.APIServer ended with: too old resource version: 8184 (12026)
+E0511 13:08:55.992153       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:08:56.067300       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:08:56.809469       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:08:56.954505       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+E0511 13:09:14.136127       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+W0511 13:11:38.948664       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 12985 (13052)
+W0511 13:16:03.617509       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 14023 (14099)
+E0511 13:18:15.645708       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling the route: route is not available at canonical host oauth-openshift.apps.os4.ringen.us: []
+I0511 13:18:24.734689       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'ConfigMapCreated' Created ConfigMap/v4-0-config-system-metadata -n openshift-authentication because it was missing
+I0511 13:18:24.752546       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'ConfigMapCreated' Created ConfigMap/oauth-openshift -n openshift-config-managed because it was missing
+I0511 13:18:24.796245       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'ServiceCreated' Created Service/oauth-openshift -n openshift-authentication because it was missing
+E0511 13:18:24.873538       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: failed handling service CA: config map has no service ca data: &v1.ConfigMap{TypeMeta:v1.TypeMeta{Kind:"", APIVersion:""}, ObjectMeta:v1.ObjectMeta{Name:"v4-0-config-system-service-ca", GenerateName:"", Namespace:"openshift-authentication", SelfLink:"/api/v1/namespaces/openshift-authentication/configmaps/v4-0-config-system-service-ca", UID:"e0ec0233-9766-44b5-948f-4e2fcef60904", ResourceVersion:"15071", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63724799904, loc:(*time.Location)(0x3bfb340)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string{"app":"oauth-openshift"}, Annotations:map[string]string{"service.alpha.openshift.io/inject-cabundle":"true"}, OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:"", ManagedFields:[]v1.ManagedFieldsEntry(nil)}, Data:map[string]string(nil), BinaryData:map[string][]uint8(nil)}
+I0511 13:18:24.881852       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:18:24Z","message":"OperatorSyncDegraded: failed handling service CA: config map has no service ca data: \u0026v1.ConfigMap{TypeMeta:v1.TypeMeta{Kind:\"\", APIVersion:\"\"}, ObjectMeta:v1.ObjectMeta{Name:\"v4-0-config-system-service-ca\", GenerateName:\"\", Namespace:\"openshift-authentication\", SelfLink:\"/api/v1/namespaces/openshift-authentication/configmaps/v4-0-config-system-service-ca\", UID:\"e0ec0233-9766-44b5-948f-4e2fcef60904\", ResourceVersion:\"15071\", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63724799904, loc:(*time.Location)(0x3bfb340)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string{\"app\":\"oauth-openshift\"}, Annotations:map[string]string{\"service.alpha.openshift.io/inject-cabundle\":\"true\"}, OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:\"\", ManagedFields:[]v1.ManagedFieldsEntry(nil)}, Data:map[string]string(nil), BinaryData:map[string][]uint8(nil)}","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:18:24.905592       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded changed from True to False ("OperatorSyncDegraded: failed handling service CA: config map has no service ca data: &v1.ConfigMap{TypeMeta:v1.TypeMeta{Kind:\"\", APIVersion:\"\"}, ObjectMeta:v1.ObjectMeta{Name:\"v4-0-config-system-service-ca\", GenerateName:\"\", Namespace:\"openshift-authentication\", SelfLink:\"/api/v1/namespaces/openshift-authentication/configmaps/v4-0-config-system-service-ca\", UID:\"e0ec0233-9766-44b5-948f-4e2fcef60904\", ResourceVersion:\"15071\", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63724799904, loc:(*time.Location)(0x3bfb340)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string{\"app\":\"oauth-openshift\"}, Annotations:map[string]string{\"service.alpha.openshift.io/inject-cabundle\":\"true\"}, OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:\"\", ManagedFields:[]v1.ManagedFieldsEntry(nil)}, Data:map[string]string(nil), BinaryData:map[string][]uint8(nil)}")
+I0511 13:18:27.122510       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'SecretCreated' Created Secret/v4-0-config-system-session -n openshift-authentication because it was missing
+I0511 13:18:28.322985       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'ConfigMapCreated' Created ConfigMap/v4-0-config-system-cliconfig -n openshift-authentication because it was missing
+I0511 13:18:29.376783       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'DeploymentCreated' Created Deployment.apps/oauth-openshift -n openshift-authentication because it was missing
+I0511 13:18:29.601949       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:18:24Z","message":"RouteHealthDegraded: failed to GET route: EOF","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+E0511 13:18:29.601956       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: EOF
+I0511 13:18:29.677348       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "OperatorSyncDegraded: failed handling service CA: config map has no service ca data: &v1.ConfigMap{TypeMeta:v1.TypeMeta{Kind:\"\", APIVersion:\"\"}, ObjectMeta:v1.ObjectMeta{Name:\"v4-0-config-system-service-ca\", GenerateName:\"\", Namespace:\"openshift-authentication\", SelfLink:\"/api/v1/namespaces/openshift-authentication/configmaps/v4-0-config-system-service-ca\", UID:\"e0ec0233-9766-44b5-948f-4e2fcef60904\", ResourceVersion:\"15071\", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63724799904, loc:(*time.Location)(0x3bfb340)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string{\"app\":\"oauth-openshift\"}, Annotations:map[string]string{\"service.alpha.openshift.io/inject-cabundle\":\"true\"}, OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:\"\", ManagedFields:[]v1.ManagedFieldsEntry(nil)}, Data:map[string]string(nil), BinaryData:map[string][]uint8(nil)}" to "RouteHealthDegraded: failed to GET route: EOF"
+E0511 13:18:32.695281       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: EOF
+E0511 13:18:36.049801       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: EOF
+E0511 13:18:42.821263       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: EOF
+I0511 13:18:58.103392       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:18:24Z","message":"RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+E0511 13:18:58.104662       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:18:58.132053       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouteHealthDegraded: failed to GET route: EOF" to "RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout"
+I0511 13:19:07.635658       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:18:24Z","message":"RouteHealthDegraded: failed to GET route: EOF","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+E0511 13:19:07.651463       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: EOF
+I0511 13:19:07.673031       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout" to "RouteHealthDegraded: failed to GET route: EOF"
+E0511 13:19:19.054963       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:19:19.058895       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:18:24Z","message":"RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout","reason":"AsExpected","status":"False","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:19:19.071733       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded message changed from "RouteHealthDegraded: failed to GET route: EOF" to "RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout"
+E0511 13:19:30.547415       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:20:10.893419       1 log.go:172] http: TLS handshake error from 10.241.3.7:49954: EOF
+I0511 13:20:30.674799       1 status_controller.go:166] clusteroperator/authentication diff {"status":{"conditions":[{"lastTransitionTime":"2020-05-11T13:20:30Z","message":"RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout","reason":"RouteHealthDegradedFailedGet","status":"True","type":"Degraded"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Progressing"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"NoData","status":"Unknown","type":"Available"},{"lastTransitionTime":"2020-05-11T13:06:27Z","reason":"AsExpected","status":"True","type":"Upgradeable"}]}}
+I0511 13:20:30.704499       1 event.go:255] Event(v1.ObjectReference{Kind:"Deployment", Namespace:"openshift-authentication-operator", Name:"authentication-operator", UID:"172e5dcf-70c7-4bed-b021-ea60962a63ea", APIVersion:"apps/v1", ResourceVersion:"", FieldPath:""}): type: 'Normal' reason: 'OperatorStatusChanged' Status for clusteroperator/authentication changed: Degraded changed from False to True ("RouteHealthDegraded: failed to GET route: net/http: TLS handshake timeout")
+I0511 13:20:34.290214       1 log.go:172] http: TLS handshake error from 10.241.2.21:59428: EOF
+I0511 13:20:40.853073       1 log.go:172] http: TLS handshake error from 10.241.3.7:50420: EOF
+I0511 13:21:04.246747       1 log.go:172] http: TLS handshake error from 10.241.2.21:59854: EOF
+I0511 13:21:10.886330       1 log.go:172] http: TLS handshake error from 10.241.3.7:50816: EOF
+I0511 13:21:34.256100       1 log.go:172] http: TLS handshake error from 10.241.2.21:60250: EOF
+I0511 13:21:40.853798       1 log.go:172] http: TLS handshake error from 10.241.3.7:51226: EOF
+I0511 13:22:04.244303       1 log.go:172] http: TLS handshake error from 10.241.2.21:60852: EOF
+I0511 13:22:10.855027       1 log.go:172] http: TLS handshake error from 10.241.3.7:51654: EOF
+W0511 13:22:16.249398       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 17125 (17211)
+I0511 13:22:34.270135       1 log.go:172] http: TLS handshake error from 10.241.2.21:33024: EOF
+I0511 13:22:40.854099       1 log.go:172] http: TLS handshake error from 10.241.3.7:52058: EOF
+I0511 13:23:04.242254       1 log.go:172] http: TLS handshake error from 10.241.2.21:33418: EOF
+I0511 13:23:10.899366       1 log.go:172] http: TLS handshake error from 10.241.3.7:52440: EOF
+I0511 13:23:32.601268       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.603839       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.603985       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604040       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604063       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604071       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604078       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604085       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604092       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604098       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604104       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604111       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604117       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604124       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604131       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604137       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604144       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604150       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604157       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+I0511 13:23:32.604163       1 streamwatcher.go:114] Unexpected EOF during watch stream event decoding: unexpected EOF
+W0511 13:23:33.746759       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Secret ended with: too old resource version: 15400 (17046)
+I0511 13:23:34.248987       1 log.go:172] http: TLS handshake error from 10.241.2.21:33806: EOF
+W0511 13:23:34.280242       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Secret ended with: too old resource version: 16724 (17046)
+W0511 13:23:34.280603       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Authentication ended with: too old resource version: 15057 (17242)
+W0511 13:23:34.280732       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Service ended with: too old resource version: 15135 (17047)
+W0511 13:23:34.280901       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Console ended with: too old resource version: 15102 (17262)
+W0511 13:23:34.444278       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Infrastructure ended with: too old resource version: 11658 (17281)
+W0511 13:23:34.444502       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.OAuth ended with: too old resource version: 11676 (17291)
+W0511 13:23:34.444553       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Deployment ended with: too old resource version: 16413 (17052)
+W0511 13:23:34.446035       1 reflector.go:299] github.com/openshift/client-go/operator/informers/externalversions/factory.go:101: watch of *v1.Authentication ended with: too old resource version: 15991 (17239)
+W0511 13:23:34.446327       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 15200 (17414)
+W0511 13:23:34.446557       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.APIServer ended with: too old resource version: 12026 (17237)
+W0511 13:23:34.446664       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Secret ended with: too old resource version: 14054 (17046)
+W0511 13:23:34.446854       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 14120 (17414)
+W0511 13:23:34.451399       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Proxy ended with: too old resource version: 10045 (17083)
+W0511 13:23:34.451581       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 15200 (17414)
+W0511 13:23:34.451911       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.Ingress ended with: too old resource version: 11676 (17285)
+W0511 13:23:34.465405       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.Secret ended with: too old resource version: 16724 (17046)
+W0511 13:23:34.465474       1 reflector.go:299] k8s.io/client-go/informers/factory.go:134: watch of *v1.ConfigMap ended with: too old resource version: 17374 (17414)
+I0511 13:23:40.854838       1 log.go:172] http: TLS handshake error from 10.241.3.7:52844: EOF
+E0511 13:23:49.004241       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 13:24:00.248976       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:24:04.253800       1 log.go:172] http: TLS handshake error from 10.241.2.21:34520: EOF
+I0511 13:24:10.855293       1 log.go:172] http: TLS handshake error from 10.241.3.7:53660: EOF
+I0511 13:24:34.247592       1 log.go:172] http: TLS handshake error from 10.241.2.21:34926: EOF
+I0511 13:24:40.853213       1 log.go:172] http: TLS handshake error from 10.241.3.7:54066: EOF
+I0511 13:25:10.855865       1 log.go:172] http: TLS handshake error from 10.241.3.7:54482: EOF
+I0511 13:25:40.854840       1 log.go:172] http: TLS handshake error from 10.241.3.7:54876: EOF
+E0511 13:26:05.480602       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:26:10.854105       1 log.go:172] http: TLS handshake error from 10.241.3.7:55226: EOF
+I0511 13:26:40.854865       1 log.go:172] http: TLS handshake error from 10.241.3.7:55590: EOF
+I0511 13:27:10.854761       1 log.go:172] http: TLS handshake error from 10.241.3.7:55938: EOF
+I0511 13:27:40.880491       1 log.go:172] http: TLS handshake error from 10.241.3.7:56298: EOF
+I0511 13:28:10.855400       1 log.go:172] http: TLS handshake error from 10.241.3.7:56644: EOF
+W0511 13:28:29.393899       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 18608 (18970)
+I0511 13:28:40.856908       1 log.go:172] http: TLS handshake error from 10.241.3.7:56994: EOF
+E0511 13:28:47.088847       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:29:10.852197       1 log.go:172] http: TLS handshake error from 10.241.3.7:57358: EOF
+I0511 13:29:40.853433       1 log.go:172] http: TLS handshake error from 10.241.3.7:57708: EOF
+I0511 13:30:10.853204       1 log.go:172] http: TLS handshake error from 10.241.3.7:58080: EOF
+I0511 13:30:40.852312       1 log.go:172] http: TLS handshake error from 10.241.3.7:58426: EOF
+I0511 13:31:10.855870       1 log.go:172] http: TLS handshake error from 10.241.3.7:58774: EOF
+I0511 13:31:40.857859       1 log.go:172] http: TLS handshake error from 10.241.3.7:59124: EOF
+I0511 13:32:10.853948       1 log.go:172] http: TLS handshake error from 10.241.3.7:59488: EOF
+I0511 13:32:40.865095       1 log.go:172] http: TLS handshake error from 10.241.3.7:59848: EOF
+I0511 13:33:10.856530       1 log.go:172] http: TLS handshake error from 10.241.3.7:60216: EOF
+I0511 13:33:40.856529       1 log.go:172] http: TLS handshake error from 10.241.3.7:60566: EOF
+I0511 13:34:10.854698       1 log.go:172] http: TLS handshake error from 10.241.3.7:60914: EOF
+I0511 13:34:40.851721       1 log.go:172] http: TLS handshake error from 10.241.3.7:33032: EOF
+W0511 13:34:44.866316       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 19821 (20489)
+I0511 13:35:10.853163       1 log.go:172] http: TLS handshake error from 10.241.3.7:33398: EOF
+I0511 13:35:40.852738       1 log.go:172] http: TLS handshake error from 10.241.3.7:33746: EOF
+E0511 13:35:59.098137       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:36:10.859654       1 log.go:172] http: TLS handshake error from 10.241.3.7:34106: EOF
+I0511 13:36:40.855755       1 log.go:172] http: TLS handshake error from 10.241.3.7:34456: EOF
+I0511 13:37:10.918349       1 log.go:172] http: TLS handshake error from 10.241.3.7:34802: EOF
+I0511 13:37:40.859528       1 log.go:172] http: TLS handshake error from 10.241.3.7:35150: EOF
+I0511 13:38:10.858181       1 log.go:172] http: TLS handshake error from 10.241.3.7:35514: EOF
+I0511 13:38:40.855791       1 log.go:172] http: TLS handshake error from 10.241.3.7:35864: EOF
+I0511 13:39:10.853070       1 log.go:172] http: TLS handshake error from 10.241.3.7:36224: EOF
+I0511 13:39:40.852201       1 log.go:172] http: TLS handshake error from 10.241.3.7:36574: EOF
+I0511 13:40:10.852772       1 log.go:172] http: TLS handshake error from 10.241.3.7:36930: EOF
+I0511 13:40:40.860643       1 log.go:172] http: TLS handshake error from 10.241.3.7:37280: EOF
+W0511 13:40:46.879720       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 21899 (21957)
+I0511 13:41:10.856884       1 log.go:172] http: TLS handshake error from 10.241.3.7:37644: EOF
+I0511 13:41:40.853046       1 log.go:172] http: TLS handshake error from 10.241.3.7:37990: EOF
+I0511 13:42:10.853327       1 log.go:172] http: TLS handshake error from 10.241.3.7:38354: EOF
+I0511 13:42:40.853691       1 log.go:172] http: TLS handshake error from 10.241.3.7:38720: EOF
+E0511 13:42:56.648281       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:43:10.856348       1 log.go:172] http: TLS handshake error from 10.241.3.7:39064: EOF
+I0511 13:43:40.852811       1 log.go:172] http: TLS handshake error from 10.241.3.7:39410: EOF
+E0511 13:43:47.460854       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 13:43:58.857806       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:44:10.862631       1 log.go:172] http: TLS handshake error from 10.241.3.7:39768: EOF
+I0511 13:44:40.853412       1 log.go:172] http: TLS handshake error from 10.241.3.7:40110: EOF
+I0511 13:45:10.856507       1 log.go:172] http: TLS handshake error from 10.241.3.7:40472: EOF
+I0511 13:45:40.853321       1 log.go:172] http: TLS handshake error from 10.241.3.7:40818: EOF
+I0511 13:46:10.853170       1 log.go:172] http: TLS handshake error from 10.241.3.7:41178: EOF
+I0511 13:46:40.852884       1 log.go:172] http: TLS handshake error from 10.241.3.7:41522: EOF
+W0511 13:47:04.381496       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 23464 (23498)
+I0511 13:47:10.940474       1 log.go:172] http: TLS handshake error from 10.241.3.7:41876: EOF
+E0511 13:47:18.138857       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 13:47:40.850299       1 log.go:172] http: TLS handshake error from 10.241.3.7:42222: EOF
+I0511 13:48:10.851421       1 log.go:172] http: TLS handshake error from 10.241.3.7:42586: EOF
+I0511 13:48:40.854827       1 log.go:172] http: TLS handshake error from 10.241.3.7:42936: EOF
+I0511 13:49:11.010437       1 log.go:172] http: TLS handshake error from 10.241.3.7:43300: EOF
+I0511 13:49:40.852714       1 log.go:172] http: TLS handshake error from 10.241.3.7:43646: EOF
+I0511 13:50:10.854059       1 log.go:172] http: TLS handshake error from 10.241.3.7:44002: EOF
+I0511 13:50:40.855052       1 log.go:172] http: TLS handshake error from 10.241.3.7:44368: EOF
+I0511 13:51:10.856326       1 log.go:172] http: TLS handshake error from 10.241.3.7:44716: EOF
+I0511 13:51:40.853368       1 log.go:172] http: TLS handshake error from 10.241.3.7:45066: EOF
+I0511 13:52:10.859123       1 log.go:172] http: TLS handshake error from 10.241.3.7:45426: EOF
+I0511 13:52:40.929807       1 log.go:172] http: TLS handshake error from 10.241.3.7:45776: EOF
+W0511 13:52:56.787730       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 24679 (24910)
+I0511 13:53:10.853814       1 log.go:172] http: TLS handshake error from 10.241.3.7:46140: EOF
+I0511 13:53:40.854530       1 log.go:172] http: TLS handshake error from 10.241.3.7:46504: EOF
+I0511 13:54:10.956822       1 log.go:172] http: TLS handshake error from 10.241.3.7:46844: EOF
+I0511 13:54:40.857247       1 log.go:172] http: TLS handshake error from 10.241.3.7:47190: EOF
+I0511 13:55:10.855017       1 log.go:172] http: TLS handshake error from 10.241.3.7:47550: EOF
+I0511 13:55:40.866904       1 log.go:172] http: TLS handshake error from 10.241.3.7:47894: EOF
+I0511 13:56:10.858059       1 log.go:172] http: TLS handshake error from 10.241.3.7:48254: EOF
+I0511 13:56:40.860597       1 log.go:172] http: TLS handshake error from 10.241.3.7:48600: EOF
+I0511 13:57:10.853617       1 log.go:172] http: TLS handshake error from 10.241.3.7:48960: EOF
+I0511 13:57:40.855034       1 log.go:172] http: TLS handshake error from 10.241.3.7:49318: EOF
+I0511 13:58:10.850637       1 log.go:172] http: TLS handshake error from 10.241.3.7:49662: EOF
+I0511 13:58:40.854002       1 log.go:172] http: TLS handshake error from 10.241.3.7:50008: EOF
+W0511 13:58:43.532979       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 25876 (26307)
+I0511 13:59:10.863876       1 log.go:172] http: TLS handshake error from 10.241.3.7:50370: EOF
+I0511 13:59:40.854998       1 log.go:172] http: TLS handshake error from 10.241.3.7:50720: EOF
+E0511 13:59:47.864787       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:00:10.853196       1 log.go:172] http: TLS handshake error from 10.241.3.7:51088: EOF
+E0511 14:00:38.228406       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:00:40.855970       1 log.go:172] http: TLS handshake error from 10.241.3.7:51438: EOF
+I0511 14:01:10.886070       1 log.go:172] http: TLS handshake error from 10.241.3.7:51786: EOF
+I0511 14:01:40.857165       1 log.go:172] http: TLS handshake error from 10.241.3.7:52152: EOF
+I0511 14:02:10.872539       1 log.go:172] http: TLS handshake error from 10.241.3.7:52502: EOF
+I0511 14:02:40.855750       1 log.go:172] http: TLS handshake error from 10.241.3.7:52842: EOF
+I0511 14:03:10.856592       1 log.go:172] http: TLS handshake error from 10.241.3.7:53206: EOF
+I0511 14:03:40.895902       1 log.go:172] http: TLS handshake error from 10.241.3.7:53556: EOF
+E0511 14:03:47.193970       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 14:03:58.770869       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:04:10.860720       1 log.go:172] http: TLS handshake error from 10.241.3.7:53902: EOF
+I0511 14:04:40.852150       1 log.go:172] http: TLS handshake error from 10.241.3.7:54252: EOF
+W0511 14:04:54.535902       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 27160 (27804)
+I0511 14:05:10.854711       1 log.go:172] http: TLS handshake error from 10.241.3.7:54600: EOF
+I0511 14:05:40.854375       1 log.go:172] http: TLS handshake error from 10.241.3.7:54946: EOF
+I0511 14:06:10.867899       1 log.go:172] http: TLS handshake error from 10.241.3.7:55302: EOF
+I0511 14:06:40.854957       1 log.go:172] http: TLS handshake error from 10.241.3.7:55648: EOF
+I0511 14:07:10.854212       1 log.go:172] http: TLS handshake error from 10.241.3.7:56008: EOF
+I0511 14:07:40.935211       1 log.go:172] http: TLS handshake error from 10.241.3.7:56354: EOF
+I0511 14:08:10.868635       1 log.go:172] http: TLS handshake error from 10.241.3.7:56714: EOF
+I0511 14:08:40.858838       1 log.go:172] http: TLS handshake error from 10.241.3.7:57072: EOF
+I0511 14:09:10.945273       1 log.go:172] http: TLS handshake error from 10.241.3.7:57448: EOF
+I0511 14:09:40.854294       1 log.go:172] http: TLS handshake error from 10.241.3.7:57808: EOF
+I0511 14:10:10.872462       1 log.go:172] http: TLS handshake error from 10.241.3.7:58186: EOF
+I0511 14:10:40.875494       1 log.go:172] http: TLS handshake error from 10.241.3.7:58550: EOF
+I0511 14:11:10.858672       1 log.go:172] http: TLS handshake error from 10.241.3.7:58924: EOF
+W0511 14:11:11.149201       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 28452 (29365)
+I0511 14:11:40.853786       1 log.go:172] http: TLS handshake error from 10.241.3.7:59292: EOF
+I0511 14:12:10.856777       1 log.go:172] http: TLS handshake error from 10.241.3.7:59662: EOF
+I0511 14:12:40.854896       1 log.go:172] http: TLS handshake error from 10.241.3.7:60024: EOF
+I0511 14:13:11.131934       1 log.go:172] http: TLS handshake error from 10.241.3.7:60402: EOF
+I0511 14:13:40.853817       1 log.go:172] http: TLS handshake error from 10.241.3.7:60762: EOF
+E0511 14:13:41.306222       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:14:10.853074       1 log.go:172] http: TLS handshake error from 10.241.3.7:32908: EOF
+I0511 14:14:40.852025       1 log.go:172] http: TLS handshake error from 10.241.3.7:33276: EOF
+I0511 14:15:10.860931       1 log.go:172] http: TLS handshake error from 10.241.3.7:33646: EOF
+I0511 14:15:40.853843       1 log.go:172] http: TLS handshake error from 10.241.3.7:34010: EOF
+I0511 14:16:10.857028       1 log.go:172] http: TLS handshake error from 10.241.3.7:34386: EOF
+E0511 14:16:39.037406       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:16:40.852879       1 log.go:172] http: TLS handshake error from 10.241.3.7:34746: EOF
+I0511 14:17:10.855147       1 log.go:172] http: TLS handshake error from 10.241.3.7:35116: EOF
+W0511 14:17:18.641818       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 30786 (30872)
+I0511 14:17:40.865024       1 log.go:172] http: TLS handshake error from 10.241.3.7:35488: EOF
+I0511 14:18:10.855585       1 log.go:172] http: TLS handshake error from 10.241.3.7:35846: EOF
+I0511 14:18:40.853529       1 log.go:172] http: TLS handshake error from 10.241.3.7:36222: EOF
+I0511 14:19:10.854193       1 log.go:172] http: TLS handshake error from 10.241.3.7:36576: EOF
+I0511 14:19:40.854212       1 log.go:172] http: TLS handshake error from 10.241.3.7:36950: EOF
+I0511 14:20:10.852940       1 log.go:172] http: TLS handshake error from 10.241.3.7:37314: EOF
+E0511 14:20:29.323325       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:20:40.883193       1 log.go:172] http: TLS handshake error from 10.241.3.7:37696: EOF
+I0511 14:21:10.870044       1 log.go:172] http: TLS handshake error from 10.241.3.7:38058: EOF
+I0511 14:21:40.852880       1 log.go:172] http: TLS handshake error from 10.241.3.7:38420: EOF
+I0511 14:22:10.857813       1 log.go:172] http: TLS handshake error from 10.241.3.7:38798: EOF
+I0511 14:22:40.854984       1 log.go:172] http: TLS handshake error from 10.241.3.7:39158: EOF
+I0511 14:23:10.854120       1 log.go:172] http: TLS handshake error from 10.241.3.7:39540: EOF
+W0511 14:23:12.576431       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 32009 (32300)
+I0511 14:23:40.854568       1 log.go:172] http: TLS handshake error from 10.241.3.7:39912: EOF
+E0511 14:23:46.971054       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 14:23:58.328946       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:24:10.942712       1 log.go:172] http: TLS handshake error from 10.241.3.7:40290: EOF
+I0511 14:24:40.853764       1 log.go:172] http: TLS handshake error from 10.241.3.7:40654: EOF
+I0511 14:25:10.854747       1 log.go:172] http: TLS handshake error from 10.241.3.7:41032: EOF
+I0511 14:25:40.853266       1 log.go:172] http: TLS handshake error from 10.241.3.7:41396: EOF
+I0511 14:26:10.854540       1 log.go:172] http: TLS handshake error from 10.241.3.7:41786: EOF
+I0511 14:26:40.854924       1 log.go:172] http: TLS handshake error from 10.241.3.7:42150: EOF
+I0511 14:27:10.854768       1 log.go:172] http: TLS handshake error from 10.241.3.7:42508: EOF
+I0511 14:27:40.855641       1 log.go:172] http: TLS handshake error from 10.241.3.7:42860: EOF
+I0511 14:28:10.858814       1 log.go:172] http: TLS handshake error from 10.241.3.7:43234: EOF
+I0511 14:28:40.892982       1 log.go:172] http: TLS handshake error from 10.241.3.7:43596: EOF
+W0511 14:29:07.226885       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 33220 (33732)
+I0511 14:29:10.872226       1 log.go:172] http: TLS handshake error from 10.241.3.7:43974: EOF
+I0511 14:29:40.854953       1 log.go:172] http: TLS handshake error from 10.241.3.7:44334: EOF
+I0511 14:30:10.854831       1 log.go:172] http: TLS handshake error from 10.241.3.7:44712: EOF
+E0511 14:30:13.515983       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:30:40.854891       1 log.go:172] http: TLS handshake error from 10.241.3.7:45072: EOF
+I0511 14:31:10.855792       1 log.go:172] http: TLS handshake error from 10.241.3.7:45446: EOF
+I0511 14:31:40.854412       1 log.go:172] http: TLS handshake error from 10.241.3.7:45808: EOF
+I0511 14:32:10.853900       1 log.go:172] http: TLS handshake error from 10.241.3.7:46176: EOF
+I0511 14:32:40.853996       1 log.go:172] http: TLS handshake error from 10.241.3.7:46522: EOF
+I0511 14:33:10.858688       1 log.go:172] http: TLS handshake error from 10.241.3.7:46886: EOF
+E0511 14:33:30.169790       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:33:40.855309       1 log.go:172] http: TLS handshake error from 10.241.3.7:47236: EOF
+I0511 14:34:10.913289       1 log.go:172] http: TLS handshake error from 10.241.3.7:47600: EOF
+I0511 14:34:40.866465       1 log.go:172] http: TLS handshake error from 10.241.3.7:47950: EOF
+I0511 14:35:10.854795       1 log.go:172] http: TLS handshake error from 10.241.3.7:48304: EOF
+W0511 14:35:19.086103       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 35103 (35262)
+I0511 14:35:40.856389       1 log.go:172] http: TLS handshake error from 10.241.3.7:48654: EOF
+I0511 14:36:10.853366       1 log.go:172] http: TLS handshake error from 10.241.3.7:49018: EOF
+I0511 14:36:40.859261       1 log.go:172] http: TLS handshake error from 10.241.3.7:49360: EOF
+I0511 14:37:10.854362       1 log.go:172] http: TLS handshake error from 10.241.3.7:49738: EOF
+I0511 14:37:40.914271       1 log.go:172] http: TLS handshake error from 10.241.3.7:50102: EOF
+I0511 14:38:10.930821       1 log.go:172] http: TLS handshake error from 10.241.3.7:50476: EOF
+I0511 14:38:40.862043       1 log.go:172] http: TLS handshake error from 10.241.3.7:50834: EOF
+I0511 14:39:10.866509       1 log.go:172] http: TLS handshake error from 10.241.3.7:51204: EOF
+I0511 14:39:40.867904       1 log.go:172] http: TLS handshake error from 10.241.3.7:51568: EOF
+I0511 14:40:10.854794       1 log.go:172] http: TLS handshake error from 10.241.3.7:51954: EOF
+I0511 14:40:40.854958       1 log.go:172] http: TLS handshake error from 10.241.3.7:52314: EOF
+W0511 14:41:06.253043       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 36431 (36664)
+I0511 14:41:10.856353       1 log.go:172] http: TLS handshake error from 10.241.3.7:52686: EOF
+I0511 14:41:40.860823       1 log.go:172] http: TLS handshake error from 10.241.3.7:53062: EOF
+I0511 14:42:10.853977       1 log.go:172] http: TLS handshake error from 10.241.3.7:53416: EOF
+I0511 14:42:40.856175       1 log.go:172] http: TLS handshake error from 10.241.3.7:53798: EOF
+I0511 14:43:10.872791       1 log.go:172] http: TLS handshake error from 10.241.3.7:54146: EOF
+I0511 14:43:40.924774       1 log.go:172] http: TLS handshake error from 10.241.3.7:54496: EOF
+E0511 14:43:47.078017       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 14:43:58.328198       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:44:11.126223       1 log.go:172] http: TLS handshake error from 10.241.3.7:54860: EOF
+I0511 14:44:40.851799       1 log.go:172] http: TLS handshake error from 10.241.3.7:55210: EOF
+I0511 14:45:10.859883       1 log.go:172] http: TLS handshake error from 10.241.3.7:55578: EOF
+E0511 14:45:31.651130       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:45:40.872243       1 log.go:172] http: TLS handshake error from 10.241.3.7:55924: EOF
+I0511 14:46:10.857206       1 log.go:172] http: TLS handshake error from 10.241.3.7:56268: EOF
+I0511 14:46:40.855224       1 log.go:172] http: TLS handshake error from 10.241.3.7:56618: EOF
+W0511 14:46:59.345489       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 38073 (38081)
+I0511 14:47:10.895246       1 log.go:172] http: TLS handshake error from 10.241.3.7:56982: EOF
+I0511 14:47:40.854042       1 log.go:172] http: TLS handshake error from 10.241.3.7:57332: EOF
+I0511 14:48:10.854239       1 log.go:172] http: TLS handshake error from 10.241.3.7:57694: EOF
+I0511 14:48:40.855257       1 log.go:172] http: TLS handshake error from 10.241.3.7:58074: EOF
+I0511 14:49:10.854844       1 log.go:172] http: TLS handshake error from 10.241.3.7:58428: EOF
+I0511 14:49:40.898458       1 log.go:172] http: TLS handshake error from 10.241.3.7:58788: EOF
+I0511 14:50:10.855921       1 log.go:172] http: TLS handshake error from 10.241.3.7:59168: EOF
+E0511 14:50:21.528157       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:50:40.866456       1 log.go:172] http: TLS handshake error from 10.241.3.7:59540: EOF
+I0511 14:51:10.855426       1 log.go:172] http: TLS handshake error from 10.241.3.7:59898: EOF
+I0511 14:51:40.854684       1 log.go:172] http: TLS handshake error from 10.241.3.7:60270: EOF
+I0511 14:52:10.884941       1 log.go:172] http: TLS handshake error from 10.241.3.7:60628: EOF
+I0511 14:52:40.853761       1 log.go:172] http: TLS handshake error from 10.241.3.7:32772: EOF
+W0511 14:52:51.564517       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 39285 (39495)
+I0511 14:53:10.853660       1 log.go:172] http: TLS handshake error from 10.241.3.7:33132: EOF
+I0511 14:53:40.856808       1 log.go:172] http: TLS handshake error from 10.241.3.7:33504: EOF
+I0511 14:54:10.852993       1 log.go:172] http: TLS handshake error from 10.241.3.7:33850: EOF
+I0511 14:54:40.860069       1 log.go:172] http: TLS handshake error from 10.241.3.7:34196: EOF
+I0511 14:55:10.860165       1 log.go:172] http: TLS handshake error from 10.241.3.7:34562: EOF
+I0511 14:55:40.861401       1 log.go:172] http: TLS handshake error from 10.241.3.7:34910: EOF
+I0511 14:56:10.858701       1 log.go:172] http: TLS handshake error from 10.241.3.7:35274: EOF
+I0511 14:56:40.854015       1 log.go:172] http: TLS handshake error from 10.241.3.7:35624: EOF
+I0511 14:57:10.852878       1 log.go:172] http: TLS handshake error from 10.241.3.7:35986: EOF
+I0511 14:57:40.868978       1 log.go:172] http: TLS handshake error from 10.241.3.7:36336: EOF
+I0511 14:58:10.864373       1 log.go:172] http: TLS handshake error from 10.241.3.7:36696: EOF
+I0511 14:58:40.858312       1 log.go:172] http: TLS handshake error from 10.241.3.7:37052: EOF
+W0511 14:59:07.740352       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 40503 (41012)
+I0511 14:59:10.946433       1 log.go:172] http: TLS handshake error from 10.241.3.7:37414: EOF
+E0511 14:59:23.196028       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 14:59:40.855060       1 log.go:172] http: TLS handshake error from 10.241.3.7:37788: EOF
+I0511 15:00:10.859362       1 log.go:172] http: TLS handshake error from 10.241.3.7:38154: EOF
+I0511 15:00:40.854808       1 log.go:172] http: TLS handshake error from 10.241.3.7:38514: EOF
+I0511 15:01:10.862862       1 log.go:172] http: TLS handshake error from 10.241.3.7:38888: EOF
+I0511 15:01:40.855449       1 log.go:172] http: TLS handshake error from 10.241.3.7:39256: EOF
+I0511 15:02:10.855001       1 log.go:172] http: TLS handshake error from 10.241.3.7:39612: EOF
+I0511 15:02:40.856617       1 log.go:172] http: TLS handshake error from 10.241.3.7:39984: EOF
+I0511 15:03:10.851819       1 log.go:172] http: TLS handshake error from 10.241.3.7:40342: EOF
+I0511 15:03:40.854250       1 log.go:172] http: TLS handshake error from 10.241.3.7:40718: EOF
+E0511 15:03:47.536959       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 15:03:58.843564       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:04:10.866058       1 log.go:172] http: TLS handshake error from 10.241.3.7:41078: EOF
+I0511 15:04:40.878255       1 log.go:172] http: TLS handshake error from 10.241.3.7:41432: EOF
+W0511 15:04:56.741077       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 42072 (42426)
+I0511 15:05:10.857825       1 log.go:172] http: TLS handshake error from 10.241.3.7:41778: EOF
+I0511 15:05:40.854325       1 log.go:172] http: TLS handshake error from 10.241.3.7:42128: EOF
+I0511 15:06:10.861035       1 log.go:172] http: TLS handshake error from 10.241.3.7:42492: EOF
+I0511 15:06:40.855537       1 log.go:172] http: TLS handshake error from 10.241.3.7:42842: EOF
+I0511 15:07:10.853189       1 log.go:172] http: TLS handshake error from 10.241.3.7:43206: EOF
+E0511 15:07:12.736931       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:07:40.855545       1 log.go:172] http: TLS handshake error from 10.241.3.7:43552: EOF
+I0511 15:08:10.856292       1 log.go:172] http: TLS handshake error from 10.241.3.7:43912: EOF
+I0511 15:08:40.851668       1 log.go:172] http: TLS handshake error from 10.241.3.7:44260: EOF
+I0511 15:09:10.854594       1 log.go:172] http: TLS handshake error from 10.241.3.7:44624: EOF
+I0511 15:09:40.856890       1 log.go:172] http: TLS handshake error from 10.241.3.7:44982: EOF
+I0511 15:10:10.855516       1 log.go:172] http: TLS handshake error from 10.241.3.7:45352: EOF
+I0511 15:10:40.856264       1 log.go:172] http: TLS handshake error from 10.241.3.7:45732: EOF
+W0511 15:10:45.857127       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 42988 (43829)
+I0511 15:11:10.856041       1 log.go:172] http: TLS handshake error from 10.241.3.7:46088: EOF
+I0511 15:11:40.854299       1 log.go:172] http: TLS handshake error from 10.241.3.7:46448: EOF
+I0511 15:12:10.857524       1 log.go:172] http: TLS handshake error from 10.241.3.7:46824: EOF
+I0511 15:12:40.856406       1 log.go:172] http: TLS handshake error from 10.241.3.7:47190: EOF
+I0511 15:13:10.854310       1 log.go:172] http: TLS handshake error from 10.241.3.7:47548: EOF
+E0511 15:13:35.824989       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:13:40.854735       1 log.go:172] http: TLS handshake error from 10.241.3.7:47924: EOF
+I0511 15:14:10.854672       1 log.go:172] http: TLS handshake error from 10.241.3.7:48278: EOF
+I0511 15:14:40.854507       1 log.go:172] http: TLS handshake error from 10.241.3.7:48634: EOF
+I0511 15:15:10.856552       1 log.go:172] http: TLS handshake error from 10.241.3.7:49016: EOF
+I0511 15:15:40.855166       1 log.go:172] http: TLS handshake error from 10.241.3.7:49368: EOF
+I0511 15:16:10.856334       1 log.go:172] http: TLS handshake error from 10.241.3.7:49714: EOF
+I0511 15:16:40.854104       1 log.go:172] http: TLS handshake error from 10.241.3.7:50062: EOF
+W0511 15:16:56.177667       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 44293 (45319)
+I0511 15:17:10.855146       1 log.go:172] http: TLS handshake error from 10.241.3.7:50424: EOF
+I0511 15:17:40.854061       1 log.go:172] http: TLS handshake error from 10.241.3.7:50774: EOF
+I0511 15:18:10.855413       1 log.go:172] http: TLS handshake error from 10.241.3.7:51136: EOF
+I0511 15:18:40.853121       1 log.go:172] http: TLS handshake error from 10.241.3.7:51486: EOF
+I0511 15:19:10.855863       1 log.go:172] http: TLS handshake error from 10.241.3.7:51850: EOF
+E0511 15:19:35.327954       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:19:41.122150       1 log.go:172] http: TLS handshake error from 10.241.3.7:52196: EOF
+I0511 15:20:10.859424       1 log.go:172] http: TLS handshake error from 10.241.3.7:52568: EOF
+I0511 15:20:40.854795       1 log.go:172] http: TLS handshake error from 10.241.3.7:52932: EOF
+I0511 15:21:10.854125       1 log.go:172] http: TLS handshake error from 10.241.3.7:53294: EOF
+I0511 15:21:41.087180       1 log.go:172] http: TLS handshake error from 10.241.3.7:53674: EOF
+I0511 15:22:10.855114       1 log.go:172] http: TLS handshake error from 10.241.3.7:54034: EOF
+I0511 15:22:40.853608       1 log.go:172] http: TLS handshake error from 10.241.3.7:54390: EOF
+W0511 15:22:56.697411       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 46668 (46765)
+I0511 15:23:10.860045       1 log.go:172] http: TLS handshake error from 10.241.3.7:54764: EOF
+I0511 15:23:41.133510       1 log.go:172] http: TLS handshake error from 10.241.3.7:55126: EOF
+E0511 15:23:47.302711       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 15:23:58.478337       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 15:24:09.903333       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:24:10.857702       1 log.go:172] http: TLS handshake error from 10.241.3.7:55484: EOF
+I0511 15:24:40.858012       1 log.go:172] http: TLS handshake error from 10.241.3.7:55844: EOF
+I0511 15:25:11.291438       1 log.go:172] http: TLS handshake error from 10.241.3.7:56222: EOF
+I0511 15:25:40.854817       1 log.go:172] http: TLS handshake error from 10.241.3.7:56578: EOF
+I0511 15:26:10.858138       1 log.go:172] http: TLS handshake error from 10.241.3.7:56958: EOF
+I0511 15:26:40.855062       1 log.go:172] http: TLS handshake error from 10.241.3.7:57302: EOF
+I0511 15:27:10.869395       1 log.go:172] http: TLS handshake error from 10.241.3.7:57664: EOF
+I0511 15:27:40.861727       1 log.go:172] http: TLS handshake error from 10.241.3.7:58014: EOF
+I0511 15:28:10.859799       1 log.go:172] http: TLS handshake error from 10.241.3.7:58376: EOF
+I0511 15:28:40.856780       1 log.go:172] http: TLS handshake error from 10.241.3.7:58722: EOF
+W0511 15:29:02.911858       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 48217 (48235)
+I0511 15:29:10.854179       1 log.go:172] http: TLS handshake error from 10.241.3.7:59086: EOF
+I0511 15:29:40.862137       1 log.go:172] http: TLS handshake error from 10.241.3.7:59436: EOF
+I0511 15:30:10.861769       1 log.go:172] http: TLS handshake error from 10.241.3.7:59808: EOF
+I0511 15:30:40.860620       1 log.go:172] http: TLS handshake error from 10.241.3.7:60158: EOF
+I0511 15:31:10.858377       1 log.go:172] http: TLS handshake error from 10.241.3.7:60524: EOF
+I0511 15:31:40.856345       1 log.go:172] http: TLS handshake error from 10.241.3.7:60888: EOF
+I0511 15:32:10.855152       1 log.go:172] http: TLS handshake error from 10.241.3.7:33032: EOF
+I0511 15:32:40.859723       1 log.go:172] http: TLS handshake error from 10.241.3.7:33394: EOF
+I0511 15:33:10.854993       1 log.go:172] http: TLS handshake error from 10.241.3.7:33770: EOF
+E0511 15:33:22.848354       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:33:40.856547       1 log.go:172] http: TLS handshake error from 10.241.3.7:34130: EOF
+I0511 15:34:10.861059       1 log.go:172] http: TLS handshake error from 10.241.3.7:34492: EOF
+I0511 15:34:40.858987       1 log.go:172] http: TLS handshake error from 10.241.3.7:34852: EOF
+W0511 15:34:49.115481       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 49530 (49646)
+I0511 15:35:10.858415       1 log.go:172] http: TLS handshake error from 10.241.3.7:35230: EOF
+I0511 15:35:40.857489       1 log.go:172] http: TLS handshake error from 10.241.3.7:35590: EOF
+I0511 15:36:10.856656       1 log.go:172] http: TLS handshake error from 10.241.3.7:35962: EOF
+I0511 15:36:40.860622       1 log.go:172] http: TLS handshake error from 10.241.3.7:36320: EOF
+I0511 15:37:10.854287       1 log.go:172] http: TLS handshake error from 10.241.3.7:36690: EOF
+I0511 15:37:40.854010       1 log.go:172] http: TLS handshake error from 10.241.3.7:37034: EOF
+I0511 15:38:10.856904       1 log.go:172] http: TLS handshake error from 10.241.3.7:37396: EOF
+I0511 15:38:40.854414       1 log.go:172] http: TLS handshake error from 10.241.3.7:37746: EOF
+I0511 15:39:10.854939       1 log.go:172] http: TLS handshake error from 10.241.3.7:38094: EOF
+I0511 15:39:40.855436       1 log.go:172] http: TLS handshake error from 10.241.3.7:38456: EOF
+I0511 15:40:10.854035       1 log.go:172] http: TLS handshake error from 10.241.3.7:38812: EOF
+I0511 15:40:40.856805       1 log.go:172] http: TLS handshake error from 10.241.3.7:39178: EOF
+E0511 15:40:44.079812       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 15:40:55.248334       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+W0511 15:41:07.698948       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 50853 (51176)
+I0511 15:41:10.855238       1 log.go:172] http: TLS handshake error from 10.241.3.7:39526: EOF
+I0511 15:41:40.863345       1 log.go:172] http: TLS handshake error from 10.241.3.7:39872: EOF
+I0511 15:42:10.856056       1 log.go:172] http: TLS handshake error from 10.241.3.7:40224: EOF
+I0511 15:42:40.854639       1 log.go:172] http: TLS handshake error from 10.241.3.7:40588: EOF
+I0511 15:43:10.854607       1 log.go:172] http: TLS handshake error from 10.241.3.7:40966: EOF
+I0511 15:43:40.856842       1 log.go:172] http: TLS handshake error from 10.241.3.7:41330: EOF
+E0511 15:43:47.126624       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 15:43:58.357867       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:44:10.860389       1 log.go:172] http: TLS handshake error from 10.241.3.7:41706: EOF
+I0511 15:44:40.854498       1 log.go:172] http: TLS handshake error from 10.241.3.7:42068: EOF
+I0511 15:45:10.857793       1 log.go:172] http: TLS handshake error from 10.241.3.7:42430: EOF
+I0511 15:45:40.854895       1 log.go:172] http: TLS handshake error from 10.241.3.7:42790: EOF
+I0511 15:46:10.860914       1 log.go:172] http: TLS handshake error from 10.241.3.7:43164: EOF
+I0511 15:46:40.862420       1 log.go:172] http: TLS handshake error from 10.241.3.7:43524: EOF
+I0511 15:47:10.854537       1 log.go:172] http: TLS handshake error from 10.241.3.7:43896: EOF
+W0511 15:47:17.471511       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 52591 (52670)
+I0511 15:47:40.854833       1 log.go:172] http: TLS handshake error from 10.241.3.7:44260: EOF
+I0511 15:48:10.860758       1 log.go:172] http: TLS handshake error from 10.241.3.7:44628: EOF
+I0511 15:48:40.853189       1 log.go:172] http: TLS handshake error from 10.241.3.7:44970: EOF
+I0511 15:49:10.959693       1 log.go:172] http: TLS handshake error from 10.241.3.7:45330: EOF
+I0511 15:49:40.858317       1 log.go:172] http: TLS handshake error from 10.241.3.7:45680: EOF
+I0511 15:50:10.855800       1 log.go:172] http: TLS handshake error from 10.241.3.7:46036: EOF
+I0511 15:50:40.864905       1 log.go:172] http: TLS handshake error from 10.241.3.7:46402: EOF
+I0511 15:51:10.856643       1 log.go:172] http: TLS handshake error from 10.241.3.7:46746: EOF
+I0511 15:51:40.859885       1 log.go:172] http: TLS handshake error from 10.241.3.7:47108: EOF
+I0511 15:52:10.857702       1 log.go:172] http: TLS handshake error from 10.241.3.7:47474: EOF
+I0511 15:52:40.855328       1 log.go:172] http: TLS handshake error from 10.241.3.7:47824: EOF
+I0511 15:53:10.854122       1 log.go:172] http: TLS handshake error from 10.241.3.7:48180: EOF
+W0511 15:53:18.275705       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 53807 (54126)
+I0511 15:53:40.856976       1 log.go:172] http: TLS handshake error from 10.241.3.7:48546: EOF
+I0511 15:54:10.853532       1 log.go:172] http: TLS handshake error from 10.241.3.7:48922: EOF
+E0511 15:54:32.048747       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:54:40.868137       1 log.go:172] http: TLS handshake error from 10.241.3.7:49280: EOF
+I0511 15:55:10.856174       1 log.go:172] http: TLS handshake error from 10.241.3.7:49662: EOF
+I0511 15:55:40.855200       1 log.go:172] http: TLS handshake error from 10.241.3.7:50026: EOF
+I0511 15:56:10.856067       1 log.go:172] http: TLS handshake error from 10.241.3.7:50392: EOF
+I0511 15:56:40.854895       1 log.go:172] http: TLS handshake error from 10.241.3.7:50750: EOF
+I0511 15:57:10.858012       1 log.go:172] http: TLS handshake error from 10.241.3.7:51120: EOF
+E0511 15:57:35.331687       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 15:57:40.853877       1 log.go:172] http: TLS handshake error from 10.241.3.7:51496: EOF
+I0511 15:58:10.859149       1 log.go:172] http: TLS handshake error from 10.241.3.7:51854: EOF
+I0511 15:58:40.861789       1 log.go:172] http: TLS handshake error from 10.241.3.7:52234: EOF
+W0511 15:59:04.503432       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 55033 (55533)
+I0511 15:59:10.861766       1 log.go:172] http: TLS handshake error from 10.241.3.7:52578: EOF
+I0511 15:59:40.854814       1 log.go:172] http: TLS handshake error from 10.241.3.7:52940: EOF
+I0511 16:00:10.859662       1 log.go:172] http: TLS handshake error from 10.241.3.7:53288: EOF
+I0511 16:00:40.855968       1 log.go:172] http: TLS handshake error from 10.241.3.7:53634: EOF
+I0511 16:01:10.859790       1 log.go:172] http: TLS handshake error from 10.241.3.7:53982: EOF
+I0511 16:01:40.857880       1 log.go:172] http: TLS handshake error from 10.241.3.7:54348: EOF
+I0511 16:02:10.854487       1 log.go:172] http: TLS handshake error from 10.241.3.7:54712: EOF
+I0511 16:02:40.856976       1 log.go:172] http: TLS handshake error from 10.241.3.7:55058: EOF
+I0511 16:03:10.856109       1 log.go:172] http: TLS handshake error from 10.241.3.7:55424: EOF
+I0511 16:03:40.853990       1 log.go:172] http: TLS handshake error from 10.241.3.7:55772: EOF
+E0511 16:03:47.064778       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 16:03:58.318454       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:04:10.960330       1 log.go:172] http: TLS handshake error from 10.241.3.7:56134: EOF
+E0511 16:04:17.153200       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:04:40.856397       1 log.go:172] http: TLS handshake error from 10.241.3.7:56498: EOF
+W0511 16:05:03.314668       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 56240 (56978)
+I0511 16:05:10.853749       1 log.go:172] http: TLS handshake error from 10.241.3.7:56876: EOF
+I0511 16:05:40.856223       1 log.go:172] http: TLS handshake error from 10.241.3.7:57240: EOF
+I0511 16:06:10.858047       1 log.go:172] http: TLS handshake error from 10.241.3.7:57614: EOF
+I0511 16:06:40.853771       1 log.go:172] http: TLS handshake error from 10.241.3.7:57986: EOF
+I0511 16:07:10.855688       1 log.go:172] http: TLS handshake error from 10.241.3.7:58344: EOF
+I0511 16:07:40.859455       1 log.go:172] http: TLS handshake error from 10.241.3.7:58720: EOF
+I0511 16:08:10.855677       1 log.go:172] http: TLS handshake error from 10.241.3.7:59078: EOF
+I0511 16:08:40.857929       1 log.go:172] http: TLS handshake error from 10.241.3.7:59450: EOF
+I0511 16:09:11.126012       1 log.go:172] http: TLS handshake error from 10.241.3.7:59806: EOF
+I0511 16:09:40.855411       1 log.go:172] http: TLS handshake error from 10.241.3.7:60180: EOF
+I0511 16:10:10.868082       1 log.go:172] http: TLS handshake error from 10.241.3.7:60532: EOF
+I0511 16:10:40.853074       1 log.go:172] http: TLS handshake error from 10.241.3.7:60894: EOF
+W0511 16:11:05.539327       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 58201 (58455)
+I0511 16:11:10.853592       1 log.go:172] http: TLS handshake error from 10.241.3.7:33006: EOF
+I0511 16:11:40.856832       1 log.go:172] http: TLS handshake error from 10.241.3.7:33352: EOF
+I0511 16:12:10.867679       1 log.go:172] http: TLS handshake error from 10.241.3.7:33700: EOF
+I0511 16:12:40.854708       1 log.go:172] http: TLS handshake error from 10.241.3.7:34066: EOF
+I0511 16:13:10.860692       1 log.go:172] http: TLS handshake error from 10.241.3.7:34412: EOF
+I0511 16:13:40.853136       1 log.go:172] http: TLS handshake error from 10.241.3.7:34778: EOF
+I0511 16:14:10.854203       1 log.go:172] http: TLS handshake error from 10.241.3.7:35128: EOF
+E0511 16:14:26.904984       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:14:40.856332       1 log.go:172] http: TLS handshake error from 10.241.3.7:35482: EOF
+I0511 16:15:10.853969       1 log.go:172] http: TLS handshake error from 10.241.3.7:35846: EOF
+I0511 16:15:40.860230       1 log.go:172] http: TLS handshake error from 10.241.3.7:36226: EOF
+I0511 16:16:10.854004       1 log.go:172] http: TLS handshake error from 10.241.3.7:36586: EOF
+I0511 16:16:40.853166       1 log.go:172] http: TLS handshake error from 10.241.3.7:36968: EOF
+I0511 16:17:10.855390       1 log.go:172] http: TLS handshake error from 10.241.3.7:37330: EOF
+W0511 16:17:11.771005       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 59880 (59934)
+I0511 16:17:40.862672       1 log.go:172] http: TLS handshake error from 10.241.3.7:37696: EOF
+I0511 16:18:10.857340       1 log.go:172] http: TLS handshake error from 10.241.3.7:38046: EOF
+I0511 16:18:40.855323       1 log.go:172] http: TLS handshake error from 10.241.3.7:38422: EOF
+I0511 16:19:10.854783       1 log.go:172] http: TLS handshake error from 10.241.3.7:38780: EOF
+I0511 16:19:40.854090       1 log.go:172] http: TLS handshake error from 10.241.3.7:39156: EOF
+E0511 16:19:45.202527       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:20:10.855192       1 log.go:172] http: TLS handshake error from 10.241.3.7:39526: EOF
+I0511 16:20:40.853453       1 log.go:172] http: TLS handshake error from 10.241.3.7:39890: EOF
+I0511 16:21:10.856339       1 log.go:172] http: TLS handshake error from 10.241.3.7:40234: EOF
+I0511 16:21:40.854396       1 log.go:172] http: TLS handshake error from 10.241.3.7:40594: EOF
+I0511 16:22:10.853279       1 log.go:172] http: TLS handshake error from 10.241.3.7:40954: EOF
+I0511 16:22:40.857218       1 log.go:172] http: TLS handshake error from 10.241.3.7:41304: EOF
+W0511 16:23:05.767922       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 61113 (61388)
+I0511 16:23:10.853804       1 log.go:172] http: TLS handshake error from 10.241.3.7:41650: EOF
+I0511 16:23:40.855098       1 log.go:172] http: TLS handshake error from 10.241.3.7:42016: EOF
+E0511 16:23:46.916029       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 16:23:58.499890       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:24:10.863011       1 log.go:172] http: TLS handshake error from 10.241.3.7:42360: EOF
+I0511 16:24:40.858138       1 log.go:172] http: TLS handshake error from 10.241.3.7:42710: EOF
+I0511 16:25:10.857845       1 log.go:172] http: TLS handshake error from 10.241.3.7:43078: EOF
+I0511 16:25:40.854361       1 log.go:172] http: TLS handshake error from 10.241.3.7:43440: EOF
+I0511 16:26:10.857326       1 log.go:172] http: TLS handshake error from 10.241.3.7:43800: EOF
+I0511 16:26:40.854052       1 log.go:172] http: TLS handshake error from 10.241.3.7:44176: EOF
+I0511 16:27:10.864240       1 log.go:172] http: TLS handshake error from 10.241.3.7:44534: EOF
+I0511 16:27:40.860260       1 log.go:172] http: TLS handshake error from 10.241.3.7:44914: EOF
+I0511 16:28:10.853240       1 log.go:172] http: TLS handshake error from 10.241.3.7:45280: EOF
+I0511 16:28:40.855997       1 log.go:172] http: TLS handshake error from 10.241.3.7:45648: EOF
+W0511 16:29:10.251186       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 62737 (62881)
+I0511 16:29:10.853531       1 log.go:172] http: TLS handshake error from 10.241.3.7:46002: EOF
+I0511 16:29:40.861685       1 log.go:172] http: TLS handshake error from 10.241.3.7:46378: EOF
+I0511 16:30:10.867532       1 log.go:172] http: TLS handshake error from 10.241.3.7:46742: EOF
+I0511 16:30:40.860176       1 log.go:172] http: TLS handshake error from 10.241.3.7:47118: EOF
+I0511 16:31:10.853990       1 log.go:172] http: TLS handshake error from 10.241.3.7:47482: EOF
+E0511 16:31:18.120134       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:31:40.872676       1 log.go:172] http: TLS handshake error from 10.241.3.7:47828: EOF
+I0511 16:32:10.853198       1 log.go:172] http: TLS handshake error from 10.241.3.7:48184: EOF
+I0511 16:32:40.860346       1 log.go:172] http: TLS handshake error from 10.241.3.7:48528: EOF
+I0511 16:33:10.855395       1 log.go:172] http: TLS handshake error from 10.241.3.7:48888: EOF
+I0511 16:33:40.871781       1 log.go:172] http: TLS handshake error from 10.241.3.7:49238: EOF
+E0511 16:34:05.266444       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:34:10.855393       1 log.go:172] http: TLS handshake error from 10.241.3.7:49586: EOF
+I0511 16:34:40.854239       1 log.go:172] http: TLS handshake error from 10.241.3.7:49936: EOF
+I0511 16:35:10.855174       1 log.go:172] http: TLS handshake error from 10.241.3.7:50300: EOF
+W0511 16:35:21.940971       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 64049 (64375)
+I0511 16:35:40.855711       1 log.go:172] http: TLS handshake error from 10.241.3.7:50650: EOF
+I0511 16:36:10.855476       1 log.go:172] http: TLS handshake error from 10.241.3.7:51016: EOF
+I0511 16:36:40.871341       1 log.go:172] http: TLS handshake error from 10.241.3.7:51378: EOF
+I0511 16:37:10.854700       1 log.go:172] http: TLS handshake error from 10.241.3.7:51740: EOF
+I0511 16:37:40.852515       1 log.go:172] http: TLS handshake error from 10.241.3.7:52120: EOF
+I0511 16:38:10.865597       1 log.go:172] http: TLS handshake error from 10.241.3.7:52478: EOF
+I0511 16:38:40.856706       1 log.go:172] http: TLS handshake error from 10.241.3.7:52858: EOF
+I0511 16:39:10.854068       1 log.go:172] http: TLS handshake error from 10.241.3.7:53230: EOF
+I0511 16:39:40.857796       1 log.go:172] http: TLS handshake error from 10.241.3.7:53588: EOF
+I0511 16:40:10.855384       1 log.go:172] http: TLS handshake error from 10.241.3.7:53954: EOF
+I0511 16:40:40.854999       1 log.go:172] http: TLS handshake error from 10.241.3.7:54310: EOF
+I0511 16:41:10.856201       1 log.go:172] http: TLS handshake error from 10.241.3.7:54684: EOF
+W0511 16:41:32.381878       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 65385 (65885)
+I0511 16:41:40.859386       1 log.go:172] http: TLS handshake error from 10.241.3.7:55062: EOF
+I0511 16:42:10.855015       1 log.go:172] http: TLS handshake error from 10.241.3.7:55416: EOF
+I0511 16:42:40.863799       1 log.go:172] http: TLS handshake error from 10.241.3.7:55762: EOF
+I0511 16:43:10.854088       1 log.go:172] http: TLS handshake error from 10.241.3.7:56122: EOF
+I0511 16:43:40.852204       1 log.go:172] http: TLS handshake error from 10.241.3.7:56464: EOF
+E0511 16:43:46.896960       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 16:43:58.201173       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:44:10.858342       1 log.go:172] http: TLS handshake error from 10.241.3.7:56824: EOF
+I0511 16:44:40.853794       1 log.go:172] http: TLS handshake error from 10.241.3.7:57174: EOF
+I0511 16:45:10.855440       1 log.go:172] http: TLS handshake error from 10.241.3.7:57526: EOF
+I0511 16:45:40.878921       1 log.go:172] http: TLS handshake error from 10.241.3.7:57876: EOF
+I0511 16:46:10.857753       1 log.go:172] http: TLS handshake error from 10.241.3.7:58240: EOF
+I0511 16:46:40.854994       1 log.go:172] http: TLS handshake error from 10.241.3.7:58586: EOF
+I0511 16:47:10.928300       1 log.go:172] http: TLS handshake error from 10.241.3.7:58954: EOF
+I0511 16:47:40.855053       1 log.go:172] http: TLS handshake error from 10.241.3.7:59318: EOF
+W0511 16:47:46.869023       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 67201 (67391)
+E0511 16:48:09.434656       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:48:10.859433       1 log.go:172] http: TLS handshake error from 10.241.3.7:59680: EOF
+I0511 16:48:40.863740       1 log.go:172] http: TLS handshake error from 10.241.3.7:60044: EOF
+I0511 16:49:10.854630       1 log.go:172] http: TLS handshake error from 10.241.3.7:60420: EOF
+I0511 16:49:40.869150       1 log.go:172] http: TLS handshake error from 10.241.3.7:60802: EOF
+E0511 16:49:57.409410       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 16:50:10.856384       1 log.go:172] http: TLS handshake error from 10.241.3.7:32942: EOF
+I0511 16:50:40.859192       1 log.go:172] http: TLS handshake error from 10.241.3.7:33302: EOF
+I0511 16:51:10.853516       1 log.go:172] http: TLS handshake error from 10.241.3.7:33660: EOF
+I0511 16:51:40.854691       1 log.go:172] http: TLS handshake error from 10.241.3.7:34034: EOF
+I0511 16:52:10.855376       1 log.go:172] http: TLS handshake error from 10.241.3.7:34392: EOF
+I0511 16:52:40.884100       1 log.go:172] http: TLS handshake error from 10.241.3.7:34772: EOF
+I0511 16:53:10.856903       1 log.go:172] http: TLS handshake error from 10.241.3.7:35118: EOF
+W0511 16:53:31.675249       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 68414 (68780)
+I0511 16:53:40.858878       1 log.go:172] http: TLS handshake error from 10.241.3.7:35464: EOF
+I0511 16:54:10.854945       1 log.go:172] http: TLS handshake error from 10.241.3.7:35824: EOF
+I0511 16:54:40.856065       1 log.go:172] http: TLS handshake error from 10.241.3.7:36170: EOF
+I0511 16:55:10.854252       1 log.go:172] http: TLS handshake error from 10.241.3.7:36534: EOF
+I0511 16:55:40.854968       1 log.go:172] http: TLS handshake error from 10.241.3.7:36882: EOF
+I0511 16:56:10.855135       1 log.go:172] http: TLS handshake error from 10.241.3.7:37226: EOF
+I0511 16:56:40.854586       1 log.go:172] http: TLS handshake error from 10.241.3.7:37576: EOF
+I0511 16:57:10.886655       1 log.go:172] http: TLS handshake error from 10.241.3.7:37936: EOF
+I0511 16:57:40.855785       1 log.go:172] http: TLS handshake error from 10.241.3.7:38286: EOF
+I0511 16:58:10.857269       1 log.go:172] http: TLS handshake error from 10.241.3.7:38660: EOF
+I0511 16:58:40.856119       1 log.go:172] http: TLS handshake error from 10.241.3.7:39022: EOF
+I0511 16:59:10.855227       1 log.go:172] http: TLS handshake error from 10.241.3.7:39384: EOF
+I0511 16:59:40.856122       1 log.go:172] http: TLS handshake error from 10.241.3.7:39748: EOF
+W0511 16:59:49.883045       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 69624 (70307)
+I0511 17:00:10.854012       1 log.go:172] http: TLS handshake error from 10.241.3.7:40134: EOF
+I0511 17:00:40.855594       1 log.go:172] http: TLS handshake error from 10.241.3.7:40512: EOF
+I0511 17:01:10.863390       1 log.go:172] http: TLS handshake error from 10.241.3.7:40878: EOF
+I0511 17:01:40.854195       1 log.go:172] http: TLS handshake error from 10.241.3.7:41238: EOF
+I0511 17:02:10.861649       1 log.go:172] http: TLS handshake error from 10.241.3.7:41596: EOF
+I0511 17:02:40.855387       1 log.go:172] http: TLS handshake error from 10.241.3.7:41968: EOF
+I0511 17:03:10.854692       1 log.go:172] http: TLS handshake error from 10.241.3.7:42326: EOF
+I0511 17:03:40.857073       1 log.go:172] http: TLS handshake error from 10.241.3.7:42706: EOF
+E0511 17:03:47.458105       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 17:03:58.957781       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:04:10.855211       1 log.go:172] http: TLS handshake error from 10.241.3.7:43058: EOF
+I0511 17:04:40.855997       1 log.go:172] http: TLS handshake error from 10.241.3.7:43404: EOF
+E0511 17:05:00.639907       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:05:10.893702       1 log.go:172] http: TLS handshake error from 10.241.3.7:43768: EOF
+E0511 17:05:12.157082       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:05:40.895807       1 log.go:172] http: TLS handshake error from 10.241.3.7:44108: EOF
+W0511 17:05:44.273802       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 70999 (71737)
+I0511 17:06:10.902129       1 log.go:172] http: TLS handshake error from 10.241.3.7:44466: EOF
+I0511 17:06:40.948387       1 log.go:172] http: TLS handshake error from 10.241.3.7:44812: EOF
+I0511 17:07:10.897746       1 log.go:172] http: TLS handshake error from 10.241.3.7:45160: EOF
+I0511 17:07:40.855094       1 log.go:172] http: TLS handshake error from 10.241.3.7:45510: EOF
+I0511 17:08:10.854966       1 log.go:172] http: TLS handshake error from 10.241.3.7:45872: EOF
+I0511 17:08:40.859844       1 log.go:172] http: TLS handshake error from 10.241.3.7:46218: EOF
+I0511 17:09:10.855349       1 log.go:172] http: TLS handshake error from 10.241.3.7:46590: EOF
+I0511 17:09:40.856669       1 log.go:172] http: TLS handshake error from 10.241.3.7:46956: EOF
+I0511 17:10:10.905849       1 log.go:172] http: TLS handshake error from 10.241.3.7:47326: EOF
+I0511 17:10:40.859333       1 log.go:172] http: TLS handshake error from 10.241.3.7:47684: EOF
+I0511 17:11:11.009975       1 log.go:172] http: TLS handshake error from 10.241.3.7:48058: EOF
+W0511 17:11:34.342908       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 72068 (73163)
+I0511 17:11:40.868918       1 log.go:172] http: TLS handshake error from 10.241.3.7:48442: EOF
+I0511 17:12:10.859163       1 log.go:172] http: TLS handshake error from 10.241.3.7:48810: EOF
+I0511 17:12:40.863133       1 log.go:172] http: TLS handshake error from 10.241.3.7:49172: EOF
+I0511 17:13:10.876604       1 log.go:172] http: TLS handshake error from 10.241.3.7:49530: EOF
+I0511 17:13:40.865243       1 log.go:172] http: TLS handshake error from 10.241.3.7:49902: EOF
+I0511 17:14:10.870744       1 log.go:172] http: TLS handshake error from 10.241.3.7:50256: EOF
+I0511 17:14:40.870376       1 log.go:172] http: TLS handshake error from 10.241.3.7:50620: EOF
+I0511 17:15:10.888229       1 log.go:172] http: TLS handshake error from 10.241.3.7:50974: EOF
+I0511 17:15:40.866803       1 log.go:172] http: TLS handshake error from 10.241.3.7:51320: EOF
+I0511 17:16:10.864425       1 log.go:172] http: TLS handshake error from 10.241.3.7:51680: EOF
+I0511 17:16:40.854043       1 log.go:172] http: TLS handshake error from 10.241.3.7:52038: EOF
+I0511 17:17:10.869887       1 log.go:172] http: TLS handshake error from 10.241.3.7:52380: EOF
+W0511 17:17:23.650140       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 74462 (74567)
+I0511 17:17:40.879352       1 log.go:172] http: TLS handshake error from 10.241.3.7:52742: EOF
+I0511 17:18:10.884840       1 log.go:172] http: TLS handshake error from 10.241.3.7:53090: EOF
+I0511 17:18:40.896611       1 log.go:172] http: TLS handshake error from 10.241.3.7:53438: EOF
+I0511 17:19:10.888517       1 log.go:172] http: TLS handshake error from 10.241.3.7:53798: EOF
+I0511 17:19:40.853862       1 log.go:172] http: TLS handshake error from 10.241.3.7:54148: EOF
+I0511 17:20:10.867625       1 log.go:172] http: TLS handshake error from 10.241.3.7:54528: EOF
+I0511 17:20:40.885229       1 log.go:172] http: TLS handshake error from 10.241.3.7:54890: EOF
+E0511 17:20:40.915153       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:21:10.857005       1 log.go:172] http: TLS handshake error from 10.241.3.7:55252: EOF
+I0511 17:21:40.875223       1 log.go:172] http: TLS handshake error from 10.241.3.7:55632: EOF
+E0511 17:21:51.899995       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:22:10.897606       1 log.go:172] http: TLS handshake error from 10.241.3.7:55988: EOF
+I0511 17:22:40.911195       1 log.go:172] http: TLS handshake error from 10.241.3.7:56372: EOF
+I0511 17:23:11.011349       1 log.go:172] http: TLS handshake error from 10.241.3.7:56740: EOF
+W0511 17:23:18.007256       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 75886 (76016)
+I0511 17:23:40.855139       1 log.go:172] http: TLS handshake error from 10.241.3.7:57102: EOF
+E0511 17:23:47.371856       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 17:23:58.750260       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:24:10.882360       1 log.go:172] http: TLS handshake error from 10.241.3.7:57460: EOF
+I0511 17:24:40.854815       1 log.go:172] http: TLS handshake error from 10.241.3.7:57818: EOF
+I0511 17:25:10.863608       1 log.go:172] http: TLS handshake error from 10.241.3.7:58196: EOF
+I0511 17:25:40.871951       1 log.go:172] http: TLS handshake error from 10.241.3.7:58554: EOF
+I0511 17:26:10.856710       1 log.go:172] http: TLS handshake error from 10.241.3.7:58906: EOF
+I0511 17:26:40.855056       1 log.go:172] http: TLS handshake error from 10.241.3.7:59252: EOF
+I0511 17:27:10.863091       1 log.go:172] http: TLS handshake error from 10.241.3.7:59612: EOF
+I0511 17:27:40.856532       1 log.go:172] http: TLS handshake error from 10.241.3.7:59974: EOF
+I0511 17:28:10.857073       1 log.go:172] http: TLS handshake error from 10.241.3.7:60314: EOF
+I0511 17:28:40.856830       1 log.go:172] http: TLS handshake error from 10.241.3.7:60672: EOF
+I0511 17:29:10.940628       1 log.go:172] http: TLS handshake error from 10.241.3.7:32788: EOF
+W0511 17:29:34.338014       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 77196 (77530)
+I0511 17:29:40.856916       1 log.go:172] http: TLS handshake error from 10.241.3.7:33138: EOF
+I0511 17:30:10.856524       1 log.go:172] http: TLS handshake error from 10.241.3.7:33510: EOF
+I0511 17:30:40.911125       1 log.go:172] http: TLS handshake error from 10.241.3.7:33860: EOF
+I0511 17:31:10.860097       1 log.go:172] http: TLS handshake error from 10.241.3.7:34232: EOF
+I0511 17:31:40.889199       1 log.go:172] http: TLS handshake error from 10.241.3.7:34594: EOF
+I0511 17:32:10.854285       1 log.go:172] http: TLS handshake error from 10.241.3.7:34956: EOF
+I0511 17:32:40.856776       1 log.go:172] http: TLS handshake error from 10.241.3.7:35336: EOF
+I0511 17:33:10.871492       1 log.go:172] http: TLS handshake error from 10.241.3.7:35702: EOF
+I0511 17:33:40.860576       1 log.go:172] http: TLS handshake error from 10.241.3.7:36092: EOF
+I0511 17:34:10.856179       1 log.go:172] http: TLS handshake error from 10.241.3.7:36458: EOF
+I0511 17:34:40.976894       1 log.go:172] http: TLS handshake error from 10.241.3.7:36816: EOF
+I0511 17:35:10.931028       1 log.go:172] http: TLS handshake error from 10.241.3.7:37178: EOF
+I0511 17:35:40.857263       1 log.go:172] http: TLS handshake error from 10.241.3.7:37554: EOF
+W0511 17:35:44.518789       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 78518 (79021)
+I0511 17:36:10.868167       1 log.go:172] http: TLS handshake error from 10.241.3.7:37912: EOF
+E0511 17:36:18.839717       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:36:40.890438       1 log.go:172] http: TLS handshake error from 10.241.3.7:38288: EOF
+I0511 17:37:10.861980       1 log.go:172] http: TLS handshake error from 10.241.3.7:38634: EOF
+I0511 17:37:40.856043       1 log.go:172] http: TLS handshake error from 10.241.3.7:38980: EOF
+I0511 17:38:10.859065       1 log.go:172] http: TLS handshake error from 10.241.3.7:39340: EOF
+I0511 17:38:40.909288       1 log.go:172] http: TLS handshake error from 10.241.3.7:39702: EOF
+E0511 17:38:43.163649       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:39:10.852944       1 log.go:172] http: TLS handshake error from 10.241.3.7:40046: EOF
+I0511 17:39:40.861941       1 log.go:172] http: TLS handshake error from 10.241.3.7:40410: EOF
+I0511 17:40:10.854893       1 log.go:172] http: TLS handshake error from 10.241.3.7:40766: EOF
+I0511 17:40:40.855602       1 log.go:172] http: TLS handshake error from 10.241.3.7:41112: EOF
+I0511 17:41:10.877092       1 log.go:172] http: TLS handshake error from 10.241.3.7:41476: EOF
+I0511 17:41:40.855757       1 log.go:172] http: TLS handshake error from 10.241.3.7:41826: EOF
+W0511 17:42:01.574912       1 reflector.go:299] github.com/openshift/client-go/config/informers/externalversions/factory.go:101: watch of *v1.ClusterOperator ended with: too old resource version: 80526 (80538)
+I0511 17:42:10.853269       1 log.go:172] http: TLS handshake error from 10.241.3.7:42196: EOF
+I0511 17:42:40.853031       1 log.go:172] http: TLS handshake error from 10.241.3.7:42560: EOF
+I0511 17:43:10.854327       1 log.go:172] http: TLS handshake error from 10.241.3.7:42920: EOF
+I0511 17:43:40.852361       1 log.go:172] http: TLS handshake error from 10.241.3.7:43292: EOF
+E0511 17:43:46.738122       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+E0511 17:43:58.208723       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:44:10.853352       1 log.go:172] http: TLS handshake error from 10.241.3.7:43654: EOF
+I0511 17:44:40.852276       1 log.go:172] http: TLS handshake error from 10.241.3.7:44020: EOF
+E0511 17:44:47.169945       1 controller.go:129] {AuthenticationOperator2 AuthenticationOperator2} failed with: error checking current version: unable to check route health: failed to GET route: net/http: TLS handshake timeout
+I0511 17:45:10.852180       1 log.go:172] http: TLS handshake error from 10.241.3.7:44408: EOF
+I0511 17:45:40.854497       1 log.go:172] http: TLS handshake error from 10.241.3.7:44770: EOF

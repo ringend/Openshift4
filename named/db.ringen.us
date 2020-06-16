@@ -1,0 +1,56 @@
+$TTL    604800
+
+; UPDATE the Serial Number before each change/add
+@       IN      SOA     ns1.ringen.us. admin.ringen.us. (
+                 60     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800 )   ; Negative Cache TTL
+
+
+; name servers - NS records
+    IN      NS      ns1.ringen.us.
+
+; name servers - A records
+ringen.us.              IN      A       192.168.99.253
+ns1.ringen.us.          IN      A       192.168.99.253
+web.ringen.us.          IN      A       192.168.99.253
+
+; dc1 - 192.168.99.0/24 - A records
+
+; OKD 3 Enviroment
+dc1-okdmaster01       IN      A      192.168.99.50
+dc1-okdinfra01       IN      A      192.168.99.59
+dc1-okdworker01       IN      A      192.168.99.51
+
+; Openshift 4 Environment
+os4lb01.os4           IN      A      192.168.99.40
+os4master01.os4       IN      A      192.168.99.41
+os4master02.os4       IN      A      192.168.99.42
+os4master03.os4       IN      A      192.168.99.43
+
+os4worker01.os4       IN      A      192.168.99.45
+os4worker02.os4       IN      A      192.168.99.46
+
+; The os4 api points to the IP of your load balancer  
+api.os4 IN A 192.168.99.40  
+api-int.os4 IN A 192.168.99.40  
+
+; The os4 wildcard also points to the load balancer
+*.apps.os4 IN A 192.168.99.40 
+
+; os4 bootstrap host  
+bootstrap.os4 IN A 192.168.99.39
+
+; The os4 ETCd cluster lives on the masters 
+etcd-0.os4 IN A 192.168.99.41  
+etcd-1.os4 IN A 192.168.99.42  
+etcd-2.os4 IN A 192.168.99.43  
+
+; The os4 SRV records
+_etcd-server-ssl._tcp.os4 IN SRV 0 10 2380 etcd-0.os4.ringen.us.
+_etcd-server-ssl._tcp.os4 IN SRV 0 10 2380 etcd-1.os4.ringen.us.
+_etcd-server-ssl._tcp.os4 IN SRV 0 10 2380 etcd-2.os4.ringen.us.
+ 
+
